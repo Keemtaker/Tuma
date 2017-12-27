@@ -8,11 +8,15 @@ class CompaniesController < ApplicationController
      @company = Company.new
   end
 
+  def show
+     @company = Company.find(params[:id])
+  end
+
 
   def create
      @company = Company.new(company_params)
        if @company.save
-        redirect_to companies_path
+        redirect_to @company
        else
         render :new
     end
