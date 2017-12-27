@@ -14,10 +14,10 @@ class CompaniesController < ApplicationController
 
 
   def create
-     @company = Company.new(company_params)
-       if @company.save
+    @company = Company.new(company_params)
+      if @company.save
         redirect_to @company
-       else
+      else
         render :new
     end
   end
