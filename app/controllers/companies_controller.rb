@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
      @companies = Company.all
@@ -8,13 +9,9 @@ class CompaniesController < ApplicationController
      @company = Company.new
   end
 
-  def show
-     @company = Company.find(params[:id])
-  end
-
-
   def create
     @company = Company.new(company_params)
+    @company.user = current_user
       if @company.save
         redirect_to @company
       else
@@ -22,12 +19,15 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def show
+     @company = Company.find(params[:id])
+  end
 
 
 private
 
   def company_params
-    params.require(:company).permit(:name, :description, :website, :location, :address, :sector)
+    params.require(:company).permit(:name, :description, :website, :location, :user_id)
   end
 end
 

@@ -1,0 +1,8 @@
+<div class="form-wrapper">
+  <%= simple_form_for (@job)  do |f| %>
+  <p>Create A Job</p>
+    <%= f.input :title, label: "Title of job" %>
+    <%= f.input :description, as: :text, :label => "Describe the job" %>
+    <%= f.submit 'Create', class: "btn btn-success" %>
+  <% end %>
+</div>
