@@ -1,0 +1,12 @@
+<div class="form-wrapper">
+  <%= simple_form_for (@company)  do |f| %>
+  <p>Create Startup Profile</p>
+    <%= f.input :name, label: "Name of company" %>
+    <%= f.input :description, as: :text, :label => "What do guys do" %>
+    <%= f.input :website, :label => "whats your fucking website" %>
+    <%= f.input :location, label: "Which city?" %>
+    <%= f.input :address, :label => "well, your address" %>
+    <%= f.input :sector, :label => "which sector do you want to disrupt?" %>
+    <%= f.submit 'Create', class: "btn btn-success" %>
+  <% end %>
+</div>
