@@ -2,8 +2,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'companies#new'
-  get 'jobs', to: 'jobs#index'
-  #get 'jobs', to: 'jobs#show'
+    resources :jobs, only: [:index] do
+      resources :applicants, only: [:show, :new, :create]
+    end
 
 
   resources :companies do
