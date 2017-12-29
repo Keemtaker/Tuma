@@ -1,6 +1,6 @@
 <div class="form-wrapper">
-  <%= simple_form_for (@job) do |f| %>
-  <p>Create Startup Profile</p>
+<%= simple_form_for @job, :url => company_jobs_path(@company, @job), :method => :post do |f| %>
+  <p>Create a Job</p>
     <%= f.input :title, label: "Title of job" %>
     <%= f.submit 'Create', class: "btn btn-success" %>
   <% end %>

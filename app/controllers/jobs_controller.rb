@@ -5,19 +5,20 @@ class JobsController < ApplicationController
   end
 
   def show
-     @job = Job.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def new
-     @job = Job.new
+    @company = Company.find(params[:company_id])
+    @job = @company.jobs.new
   end
 
   def create
     @job = Job.new(job_params)
-     @company =  Company.find(params[:id])
-     @job.company_id = @company[:id]
+    @company =  params[:company_id]
+    @job.company_id = @company
     if @job.save
-      redirect_to jobs_path
+      redirect_to company_job_path(@company, @job)
     else
       render :new
     end
