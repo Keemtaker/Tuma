@@ -1,8 +1,7 @@
 <h1>we are in applicants new page</h1>
 
 <div class="form-wrapper">
-
-    <%= simple_form_for @applicant, :url => job_applicants_path(@job, @applicant), :method => :post do |f| %>
+  <%= simple_form_for @applicant, :url => job_applicants_path(@job, @applicant), :method => :post do |f| %>
   <p>Create a Job</p>
     <%= f.input :first_name, label: "First name" %>
     <%= f.submit 'Create', class: "btn btn-success" %>

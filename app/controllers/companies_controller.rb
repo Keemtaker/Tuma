@@ -23,6 +23,10 @@ class CompaniesController < ApplicationController
      @company = Company.find(params[:id])
   end
 
+  def dashboard
+    @dashboards = Applicant.all
+  end
+
 
 private
 
