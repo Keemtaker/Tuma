@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'companies#new'
     resources :jobs, only: [:index] do
       resources :applicants, only: [:show, :new, :create]
+      get 'applicants/:id/dashboard', to: "companies#dashboard", on: :member
     end
+        #get 'applicant_id/dashboard', to: 'companies#dashboard', on: :member
+
+  get 'dashboard', to: "companies#dashboard"
 
 
   resources :companies do
