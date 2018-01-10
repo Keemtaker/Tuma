@@ -7,6 +7,8 @@
     <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
     <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
     <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
+    <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit 'Create', class: "btn btn-success" %>
 </div>
 <% end %>

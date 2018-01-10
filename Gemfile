@@ -8,6 +8,9 @@ gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
 gem 'sqlite3'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 
 
 gem 'autoprefixer-rails'
