@@ -1,0 +1,31 @@
+.space-out {
+  margin-bottom: 30px;
+}
+
+.style-section {
+  padding: 30px 30px;
+  font-style: italic;
+  color: red;
+}
+
+#new_company {
+  background-color: white;
+}
+
+/* .style-company {
+  width: 800px;
+}
+ */
+
+
+@media only screen and (min-width : 992px) {
+  .style-company {
+    width: 800px;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .style-company {
+    width: 800px;
+  }
+}

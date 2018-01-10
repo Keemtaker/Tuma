@@ -1,12 +1,13 @@
-<div class="form-wrapper">
-  <%= simple_form_for (@company)  do |f| %>
-  <p>Create Startup Profile</p>
-    <%= f.input :name, label: "Name of company" %>
-    <%= f.input :description, as: :text, :label => "What do guys do" %>
-    <%= f.input :website, :label => "whats your fucking website" %>
-    <%= f.input :location, label: "Which city?" %>
-    <%= f.input :address, :label => "well, your address" %>
-    <%= f.input :sector, :label => "which sector do you want to disrupt?" %>
+<h2 class=style-section>Company Profile</h2>
+<%= simple_form_for(@company) do |f| %>
+<div class="container style-company">
+    <%= f.input :name, label: "Name of company",  wrapper_html: { class: 'space-out' } %>
+    <%= f.input :description, as: :text, :label => "What do you do", wrapper_html: { class: 'space-out' }%>
+    <%= f.input :website, :label => "Website", wrapper_html: { class: 'space-out' } %>
+    <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
+    <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
+    <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
     <%= f.submit 'Create', class: "btn btn-success" %>
-  <% end %>
 </div>
+<% end %>
+
