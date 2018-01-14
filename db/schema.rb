@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110214536) do
+ActiveRecord::Schema.define(version: 20180114182652) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "first_name"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20180110214536) do
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
+  create_table "company_perks", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "perk_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_perks_on_company_id"
+    t.index ["perk_id"], name: "index_company_perks_on_perk_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "role"
@@ -44,6 +53,12 @@ ActiveRecord::Schema.define(version: 20180110214536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id"
+  end
+
+  create_table "perks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,6 +9,8 @@
     <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
     <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.association :perks, as: :check_boxes %>
+
     <%= f.submit 'Create', class: "btn btn-success" %>
 </div>
 <% end %>
