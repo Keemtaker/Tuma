@@ -1,5 +1,8 @@
 <h1><%= @company.name %></h1>
-<%= cl_image_tag @company.photo, height: 300, width: 400, crop: :fill %>
+
+<% @company.perks.each do |perk| %>
+  <h1><%= perk.name %></h1>
+<% end %>
 
 <%= link_to "Create Job", new_company_job_path(@company) %>
 
