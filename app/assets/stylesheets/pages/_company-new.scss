@@ -29,3 +29,61 @@
     width: 800px;
   }
 }
+
+
+// .perk-choices {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   margin: 20px 0;
+// }
+
+// .perk-choice {
+//   background: #b7b7b7;
+//   padding: 20px;
+//   border-radius: 5px;
+//   opacity: .4;
+//   flex: 0 0 30%;
+//   text-align: center;
+//   &:hover {
+//     opacity: 1;
+//     cursor: pointer;
+//   }
+//   &.active {
+//   background: $brand-primary;
+//   color: white;
+//   opacity: 1;
+//   }
+// }
+
+.perk-choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+
+}
+
+.perk-choice {
+  background: #CFCFD3;
+  padding: 27px 15px 24px 10px;
+  font-size: 14px;
+  max-width: 33%;
+  height: 117px;
+  flex: 1 0 auto; /* or whatever width you want. */
+
+  // display: inline-block;
+  border-radius: 5px;
+  opacity: 0.4;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+    background: #DA3849;
+    color: white;
+    opacity: 1;
+  }
+}
+
+

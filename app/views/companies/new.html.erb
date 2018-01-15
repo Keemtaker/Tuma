@@ -1,17 +1,42 @@
 <h2 class=style-section>Company Profile</h2>
 <%= simple_form_for(@company) do |f| %>
 <div class="container style-company">
-    <%= f.input :name, label: "Name of company",  wrapper_html: { class: 'space-out' } %>
-    <%= f.input :description, as: :text, :label => "What do you do", wrapper_html: { class: 'space-out' }%>
-    <%= f.input :website, :label => "Website", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.association :perks, as: :check_boxes %>
+  <%= f.input :name, label: "Name of company",  wrapper_html: { class: 'space-out' } %>
+  <%= f.input :description, as: :text, :label => "What do you do", wrapper_html: { class: 'space-out' }%>
+  <%= f.input :website, :label => "Website", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
+  <%= f.input :photo_cache, as: :hidden %>
 
-    <%= f.submit 'Create', class: "btn btn-success" %>
+
+  <div class="form-group">
+    <label class="control-label check_boxes optional">Perks</label>
+      <input type="hidden" name="company[perk_ids][]" value="">
+    <div class="perk-choices">
+      <% Perk.all.each do |perk| %>
+        <input type="checkbox" class="hidden" value="<%= perk.id %>" name="company[perk_ids][]" id="company_perk_ids_<%= perk.id %>">
+      <label class="perk-choice" for="company_perk_ids_<%= perk.id %>">
+        <% if perk.name == "Fitness" %>
+          <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+        <% end %>
+        <br>
+        <%= perk.name %>
+    </label>
+     <% end %>
+
+    </div>
+  </div>
+
+<%= f.submit 'Create', class: "btn btn-success" %>
 </div>
 <% end %>
 
+
+
+
+
+
+
+<!--         <i class="fa fa-check"></i>

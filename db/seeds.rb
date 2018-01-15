@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-perks = %w(Fitness Lunch Health)
+perks = ['Free Lunch', 'Health Inusrance', 'Paid Vacation', 'Friday Bars', 'Equity & Stock Options', 'Free Coffee']
 perks.each do |perk|
   Perk.create!(name: perk)
 end
