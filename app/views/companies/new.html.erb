@@ -1,204 +1,45 @@
 <h2 class=style-section>Company Profile</h2>
 <div class="container">
   <div class="main-body">
-    <form class="form-horizontal">
-      <%= simple_form_for(@company) do |f| %>
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">Name</label>
-
-      <div class="col-md-4">
-        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
-      </div>
-    </div>
-
-    <!-- Email input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="password">Email</label>
-
-      <div class="col-md-4">
-        <input id="email" name="email" type="email" placeholder="Email"
-        class="form-control input-md" required="">
-      </div>
-    </div>
-    <!-- Weight input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="password">Weight</label>
-
-      <div class="col-md-4">
-        <input id="weight" name="weight" type="number" placeholder="Weight"
-        class="form-control input-md" required="">
-      </div>
-    </div>
-    <!-- Paddress input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">Permanent Address</label>
-
-      <div class="col-md-4">
-        <input id="paddress" name="paddress" type="text" placeholder="Address" class="form-control input-md"
-        required="">
-      </div>
-    </div>
-    <!-- Taddress input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">Temporary Address</label>
-
-      <div class="col-md-4">
-        <input id="taddress" name="taddress" type="text" placeholder="Address" class="form-control input-md"
-        required="">
-      </div>
-    </div>
-    <!-- Phone input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="password">Phone</label>
-
-      <div class="col-md-4">
-        <input id="phone" name="phone" type="number" placeholder="Phone number"
-        class="form-control input-md" required="">
-      </div>
-    </div>
-    <!-- School input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">School/Collage</label>
-
-      <div class="col-md-4">
-        <input id="school" name="school" type="text" placeholder="Name" class="form-control input-md"
-        required="">
-      </div>
-    </div>
-    <!-- School Address input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">School/Collage Address</label>
-
-      <div class="col-md-4">
-        <input id="aschool" name="aschool" type="text" placeholder="Address" class="form-control input-md"
-        required="">
-      </div>
-    </div>
-    <!-- Mother Name input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">Mother's Name</label>
-
-      <div class="col-md-4">
-        <input id="mname" name="mname" type="text" placeholder="Name" class="form-control input-md"
-        required="">
-      </div>
-    </div>
-    <!-- Mother Phone input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label">Mother's Phone</label>
-
-      <div class="col-md-4">
-        <input id="mphone" name="mphone" type="number" placeholder="Phone number"
-        class="form-control input-md" required="">
-      </div>
-    </div>
-    <!-- Mother's Email input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="password">Mother's Email</label>
-
-      <div class="col-md-4">
-        <input id="memail" name="memail" type="email" placeholder="Email"
-        class="form-control input-md" required="">
-      </div>
-    </div>
-    <!-- Employment Input -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="checkboxes">Employment</label>
-
-      <div class="col-md-4">
-        <div class="checkbox">
-          <label>
-            <input name="memployboxes" id="memployboxes-0" value="0" type="radio">
-            No
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input name="memployboxes" id="memployboxes-1" value="1" type="radio">
-            Yes
-          </label>
-        </div>
-        <span class="help-block">Please select The employment status of your Mother</span>
-      </div>
-    </div>
-    <div id="motherdiv" style="display:none">
-      <!-- Mother's Profession input-->
+    <%= simple_form_for [@company], html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
       <div class="form-group">
-        <label class="col-md-4 control-label">Mother's Profession</label>
-
-        <div class="col-md-4">
-          <input id="mprof" name="mprof" type="text" placeholder="Profession"
-          class="form-control input-md" required="">
+        <label class="col-md-1 control-label"></label>
+        <div class="col-md-9">
+           <%= f.input :name,  :label => "Name of Company" %>
         </div>
       </div>
 
-
-      <!-- Father Name input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="name">Father's Name</label>
-
-        <div class="col-md-4">
-          <input id="fname" name="fname" type="text" placeholder="Name" class="form-control input-md"
-          required="">
-        </div>
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :description, as: :text, :label => "What do you do" %>
       </div>
-      <!-- Father Phone input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">Father's Phone</label>
+    </div>
 
-        <div class="col-md-4">
-          <input id="fphone" name="fphone" type="number" placeholder="Phone number"
-          class="form-control input-md" required="">
-        </div>
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :website, :label => "Website" %>
       </div>
-      <!-- Father's Email input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">Father's Email</label>
-        <div class="col-md-4">
-          <input id="femail" name="femail" type="email" placeholder="Email"
-          class="form-control input-md" required="">
-        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :location, :label => "City" %>
       </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :address, :label => "Address" %>
+      </div>
+    </div>
+
+
+
       <!-- Employment Input -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="checkboxes">Employment</label>
-
-        <div class="col-md-4">
-          <div class="checkbox">
-            <label>
-              <input name="femployboxes" id="femployboxes-0" value="0" type="radio">
-              No
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input name="femployboxes" id="femployboxes-1" value="1" type="radio">
-              Yes
-            </label>
-          </div>
-        </div>
-      </div>
-      <div id="fatherdiv" style="display:none">
-        <!-- Father's Profession input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label">Father's Profession</label>
-
-          <div class="col-md-4">
-            <input id="mprof" name="mprof" type="text" placeholder="Profession"
-            class="form-control input-md" required="">
-          </div>
-        </div>
-        <!-- Button (Double) -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="button1id"></label>
-
-          <div class="col-md-8">
-            <button type="submit" class="btn btn-success">Save</button>
-            <a id="cancel" name="cancel" class="btn btn-danger" href="#">
-            Cancel</a>
-          </div>
-        </div>
         <% end %>
       </form>
     </div>
