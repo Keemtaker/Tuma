@@ -18,10 +18,13 @@ gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'turbolinks'
+gem 'coffee-rails'
 
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'summernote-rails'
+
 
 
 group :development do
