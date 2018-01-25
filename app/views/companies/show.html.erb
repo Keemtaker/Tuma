@@ -6,6 +6,10 @@
   <h1><%= perk.name %></h1>
 <% end %>
 
+<% @company.industries.each do |industry| %>
+  <h1><%= industry.name %></h1>
+<% end %>
+
 <%= link_to "Create Job", new_company_job_path(@company) %>
 
 
