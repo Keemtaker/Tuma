@@ -1,17 +1,85 @@
 <h2 class=style-section>Company Profile</h2>
-<%= simple_form_for(@company) do |f| %>
-<div class="container style-company">
-    <%= f.input :name, label: "Name of company",  wrapper_html: { class: 'space-out' } %>
-    <%= f.input :description, as: :text, :label => "What do you do", wrapper_html: { class: 'space-out' }%>
-    <%= f.input :website, :label => "Website", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
-    <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.association :perks, as: :check_boxes %>
+<div class="container">
+  <div class="main-body">
+    <%= simple_form_for [@company], html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
+      <div class="form-group">
+        <label class="col-md-1 control-label"></label>
+        <div class="col-md-9">
+           <%= f.input :name,  :label => "Name of Company" %>
+        </div>
+      </div>
 
-    <%= f.submit 'Create', class: "btn btn-success" %>
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :description, as: :text, :label => "What do you do", as: :summernote %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :website, :label => "Website" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :location, :label => "City" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :address, :label => "Address" %>
+      </div>
+    </div>
+
+
+
+
+<div class="form-group">
+        <label class="col-md-1 control-label">Industries</label>
+
+    <div class="col-md-9 col-md-offset-3">
+      <div class="industry-choices">
+
+
+
+            <% Industry.all.each do |industry| %>
+    <div class="styled-input-container styled-input--rounded">
+      <div class="styled-input-single">
+
+        <input type="checkbox" value="<%= industry.id %>" name="company[industry_ids][]" id="company_industry_ids_<%= industry.id %>"/>
+        <label for="company_industry_ids_<%= industry.id %>"Industry>
+          <%= industry.name %>
+          </label>
 </div>
-<% end %>
+</div>
+        <% end %>
+      </div>
+      </div>
+</div>
+
+
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+          <%= f.submit 'Create', class: "btn btn-success" %>
+
+      </div>
+    </div>
+
+
+
+
+      <!-- Employment Input -->
+        <% end %>
+      </form>
+    </div>
+  </div>
+
 

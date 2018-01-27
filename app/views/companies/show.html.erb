@@ -1,8 +1,15 @@
 <h1><%= @company.name %></h1>
+<h1><%= @company.description %></h1>
+
 
 <% @company.perks.each do |perk| %>
   <h1><%= perk.name %></h1>
 <% end %>
+<% @company.industries.each do |perk| %>
+  <h1><%= perk.name %></h1>
+<% end %>
+
+
 
 <%= link_to "Create Job", new_company_job_path(@company) %>
 

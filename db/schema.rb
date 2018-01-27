@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114182652) do
+ActiveRecord::Schema.define(version: 20180126185219) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "first_name"
@@ -26,12 +26,20 @@ ActiveRecord::Schema.define(version: 20180114182652) do
     t.string "website"
     t.string "location"
     t.string "address"
-    t.string "sector"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "photo"
     t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "company_industries", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "industry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_industries_on_company_id"
+    t.index ["industry_id"], name: "index_company_industries_on_industry_id"
   end
 
   create_table "company_perks", force: :cascade do |t|
@@ -41,6 +49,12 @@ ActiveRecord::Schema.define(version: 20180114182652) do
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_perks_on_company_id"
     t.index ["perk_id"], name: "index_company_perks_on_perk_id"
+  end
+
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "jobs", force: :cascade do |t|

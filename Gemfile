@@ -11,16 +11,20 @@ gem 'sqlite3'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
-
-
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
+gem 'turbolinks'
+gem 'coffee-rails'
+
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'summernote-rails'
+
 
 
 group :development do
