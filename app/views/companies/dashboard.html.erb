@@ -37,6 +37,37 @@
             </div>
           </div>
 
+          <%= f.association :perks,   as: :check_boxes %>
+
   <%= f.submit 'Create', class: "btn btn-success" %>
 </div>
 <% end %>
+
+
+
+
+
+
+<div class="form-group style-company">
+  <input type="checkbox" name="company[industry_ids][]" value="">
+
+    <div class="col-md-6 col-md-offset-3">
+
+  <div class="two-column">
+    <div class="single-col">
+
+    <div class="styled-input-container styled-input--rounded">
+    <% Industry.all.each do |industry| %>
+
+      <input type="checkbox" value="<%= industry.id %>" name="company[industry_ids][]" id="company_industry_ids_<%= industry.id %>">
+
+      <label class="styled-input-single " for="company_industry_ids_<%= industry.id %>">
+        <%= industry.name %>
+      </label>
+    <% end %>
+      </div>
+  </div>
+  </div>
+    </div>
+</div>
+

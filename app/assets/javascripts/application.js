@@ -4,6 +4,7 @@
 //= require bootstrap-sprockets
 //= require summernote
 //= require company
+//= require industry
 
 //= require_tree .
 

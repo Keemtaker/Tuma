@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# perks = ['Free Lunch', 'Health Inusrance', 'Paid Vacation', 'Friday Bars', 'Equity & Stock Options', 'Free Coffee', 'Company Retreats', 'Maternity & Paternity Leave', 'Occasional Remote Work', 'Pension Plan']
-# perks.each do |perk|
-#   Perk.create!(name: perk)
-# end
+perks = ['Free Lunch', 'Health Inusrance', 'Paid Vacation', 'Friday Bars', 'Equity & Stock Options', 'Free Coffee', 'Company Retreats', 'Maternity & Paternity Leave', 'Occasional Remote Work', 'Pension Plan']
+perks.each do |perk|
+  Perk.create!(name: perk)
+end
 
-industries = ['Free Lunch', 'Health Inusrance', 'Paid Vacation', 'Friday Bars', 'Equity & Stock Options', 'Free Coffee', 'Company Retreats', 'Maternity & Paternity Leave', 'Occasional Remote Work', 'Pension Plan']
+industries = ['Health', 'IoT', 'Finance', 'Medical', "Chatbots", "Other", "Media", "Saas", "Service", "Energy & Greentech", "Education", "Entertainment"]
 industries.each do |industry|
   Industry.create!(name: industry)
 end
+
