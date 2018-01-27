@@ -21,6 +21,8 @@ input::-webkit-inner-spin-button {
 
 .main-body .form-horizontal .control-label {
     text-align: left;
+    color: gray;
+    font-style: italic;
 }
 
 
@@ -204,4 +206,41 @@ hr {
 
 }
 
+
+@media (min-width: 992px) {
+  .col-md-1 {
+    float: none;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1023px)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .industry-choices {
+    margin-left: 250px;
+  }
+}
+
+#company_photo {
+  padding: 10px 10px;
+  color: blue;
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  #company_photo {
+    margin-left: 50px;
+    display: inline-flex;
+  }
+}
+
+.style-section {
+  padding: 20px 20px;
+  background-color: lightgray;
+  width: fit-content;
+  border-radius: 40px;
+  font-style: italic;;
+  margin-bottom: 50px;
+}
 
