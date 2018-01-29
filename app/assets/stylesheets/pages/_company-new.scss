@@ -202,8 +202,7 @@ hr {
 
 .industry-choices {
   display: grid;
-    grid-template-columns: 50% 50%;
-
+  grid-template-columns: 50% 50%;
 }
 
 
@@ -233,6 +232,22 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 @media only screen
 and (min-device-width : 768px) {
   #company_photo {
+    margin-left: 50px;
+    display: inline-flex;
+  }
+}
+
+#company_logo {
+  padding: 10px 10px;
+  background-color: lightgray;
+  margin-top: 30px;
+}
+
+
+
+@media only screen
+and (min-device-width : 768px) {
+  #company_logo {
     margin-left: 50px;
     display: inline-flex;
   }
