@@ -6,4 +6,5 @@ class Company < ApplicationRecord
   has_many :company_industries
   has_many :industries, through: :company_industries
   mount_uploader :photo, PhotoUploader
+  mount_uploader :logo, LogoUploader
 end

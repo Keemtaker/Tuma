@@ -5,5 +5,6 @@ $('[data-provider="summernote"]').each ->
     height: 300
 
 
+plainText = $($('#summernote').summernote('code')).text()
 
 

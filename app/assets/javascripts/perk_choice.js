@@ -1,6 +1,6 @@
+
 $(document).ready(function(){
-  $(".perk-choice").click(function(){
+  $(".category-choice").click(function(){
     $(this).toggleClass("active");
   });
 });
-
