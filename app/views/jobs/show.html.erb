@@ -1,6 +1,14 @@
-<h1><%= @job.title %></h1>
-<h1><%= @job.job_type %></h1>
-<h1><%= @job.description %></h1>
-<h1><%= @job.keywords %></h1>
-<h1><%= @job.company.name %></h1>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="job-card">
+    <a href="https://thehub.dk/jobs/company/crowdiocom"><img src="https://thehub.dk/files/5735c74be208e16a67106e52/logo_upload-37439e7643a941b8c15f6eb47bbb0446.png" class="show-logo"/></a>
+    <h3><%= @job.company.name %></h3>
+    <h1><%= @job.title %></h1>
+  <div class="show-right">
+    <h4><%= @job.salary %></h4>
+  </div>
+  </div>
+  <div class="card-description">
+    <h4><%= @job.job_type %></h4>
+  </div>
+</div>
 
