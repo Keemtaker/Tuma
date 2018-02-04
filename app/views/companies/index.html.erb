@@ -1,6 +1,4 @@
 
-<%= link_to "Log out", destroy_user_session_path, :method => :delete %>
 <% @companies.each do |company| %>
   <h1><%= company.name %></h1>
 <% end %>
-
