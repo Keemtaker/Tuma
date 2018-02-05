@@ -12,11 +12,17 @@ class ApplicantsController < ApplicationController
     @job =  params[:job_id]
     @applicant.job_id = @job
     @applicant.save
+      if @applicant.save
+       redirect_to dashboard_path(@job, @applicant)
+      else
+       render :new
+      end
+
       #if @applicant.save
-       # redirect_to dashboard_job_path(@job, @applicant)
+       # redirect_to job_applicant_path(@job, @applicant)
       #else
        # render :new
-      #end
+       #end
   end
 
   def show

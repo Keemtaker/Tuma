@@ -12,12 +12,18 @@
     </div>
   </div>
 
+  <%= link_to new_job_applicant_path(@job) do %>
+  <div style="padding: 20px; background-color: white;" class="apply-box text-center">
+    <button type="button" class="btn btn-primary btn-lg">Apply</button>
+  </div>
+  <% end %>
+
 <div class="container">
   <div class="row pitch-box">
     <div style="margin-bottom:10px;" class="col-md-6">
        <%= @job.pitch %>
     </div>
-    <div class="col-md-6 summary-box">
+    <div class="col-md-5 col-md-offset-1 summary-box">
      <div class="location">
       <i class="fa fa-map-marker" aria-hidden="true"></i>         <%= @job.job_type %>
      </div>
