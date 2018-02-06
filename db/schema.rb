@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130140036) do
+ActiveRecord::Schema.define(version: 20180202181714) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "first_name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20180130140036) do
     t.string "keywords"
     t.string "salary"
     t.string "equity"
+    t.text "pitch"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 

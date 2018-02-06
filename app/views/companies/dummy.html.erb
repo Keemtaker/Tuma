@@ -1,0 +1,108 @@
+<h2 class=style-section>Company Profile</h2>
+<%= simple_form_for(@company) do |f| %>
+<div class="container style-company">
+  <%= f.input :name, label: "Name of company",  wrapper_html: { class: 'space-out' } %>
+  <%= f.input :description, as: :text, :label => "What do you do", wrapper_html: { class: 'space-out' }%>
+  <%= f.input :website, :label => "Website", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :location, label: "City", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :address, :label => "Address", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :sector, :label => "Which sector or sectors do you want to disrupt?", wrapper_html: { class: 'space-out' } %>
+  <%= f.input :photo, :label => "Image", wrapper_html: {class: 'space-out'} %>
+  <%= f.input :photo_cache, as: :hidden %>
+
+          <div class="form-group">
+            <input type="hidden" name="company[perk_ids][]" value="">
+            <div class="search-perk-choices">
+              <% Perk.all.each do |perk| %>
+                <input type="checkbox" class="hidden"  value="<%= perk.id %>" name="company[perk_ids][]"
+                id="company_perk_ids_<%= perk.id %>">
+                <label class="search-perk-choice" for="company_perk_ids_<%= perk.id %>">
+                  <div class="search-perk-icon-circle">
+                  </div>
+               <i class="fa fa-cutlery search-perk-icon"></i>
+                  <span class="search-perk-name">
+                  <%= perk.name %>
+                </span>
+                </label>
+              <% end %>
+            </div>
+          </div>
+
+          <%= f.association :perks,   as: :check_boxes %>
+
+  <%= f.submit 'Create', class: "btn btn-success" %>
+</div>
+<% end %>
+
+
+
+
+
+
+<div class="form-group style-company">
+  <input type="checkbox" name="company[industry_ids][]" value="">
+
+    <div class="col-md-6 col-md-offset-3">
+
+  <div class="two-column">
+    <div class="single-col">
+
+    <div class="styled-input-container styled-input--rounded">
+    <% Industry.all.each do |industry| %>
+
+      <input type="checkbox" value="<%= industry.id %>" name="company[industry_ids][]" id="company_industry_ids_<%= industry.id %>">
+
+      <label class="styled-input-single " for="company_industry_ids_<%= industry.id %>">
+        <%= industry.name %>
+      </label>
+    <% end %>
+      </div>
+  </div>
+  </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <h2 class=style-section>Image Upload</h2>
+  <p1>In this section, you essentially display your company's swagger.<br />
+  Upload your company's best images and make it look smashing</p1>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :photo, :label => "Cover Image", wrapper_html: { class: 'photo-style' }  %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <p1>Upload a broad image that represents your company</p1>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :logo, :label => "Company Logo", wrapper_html: { class: 'photo-style' }  %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <p1>Upload Company logo</p1>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<% @jobs.each do |job| %>
+    <%= link_to new_job_applicant_path(job[:id]) do %>
+      <h2><%= job.title %></h2>
+    <% end %>
+  <h2><%= job.company[:name] %></h2>
+<% end %>
