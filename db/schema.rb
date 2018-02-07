@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206193813) do
+ActiveRecord::Schema.define(version: 20180207221726) do
 
   create_table "applicants", force: :cascade do |t|
     t.integer "job_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20180206193813) do
     t.string "salary"
     t.string "equity"
     t.text "pitch"
+    t.string "email"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
