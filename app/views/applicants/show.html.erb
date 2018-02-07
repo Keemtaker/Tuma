@@ -1,4 +1,8 @@
-<%= raise %>
 <h1>we are in the show page</h1>
-<%= @applicant.first_name %>
+<%= @applicant.full_name %>
+<%= @applicant.email %>
+<%= @applicant.mobile_number %>
+<%= @applicant.resume %>
+<%= cl_image_tag @applicant.resume %>
+
 

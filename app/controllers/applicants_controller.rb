@@ -12,17 +12,17 @@ class ApplicantsController < ApplicationController
     @job =  params[:job_id]
     @applicant.job_id = @job
     @applicant.save
+      # if @applicant.save
+      #  redirect_to dashboard_path(@job, @applicant)
+      # else
+      #  render :new
+      # end
+
       if @applicant.save
-       redirect_to dashboard_path(@job, @applicant)
+       redirect_to job_applicant_path(@job, @applicant)
       else
        render :new
-      end
-
-      #if @applicant.save
-       # redirect_to job_applicant_path(@job, @applicant)
-      #else
-       # render :new
-       #end
+       end
   end
 
   def show
@@ -33,7 +33,7 @@ class ApplicantsController < ApplicationController
   private
 
   def applicant_params
-    params.require(:applicant).permit(:first_name, :job_id)
+    params.require(:applicant).permit(:full_name, :email, :mobile_number, :cover_letter, :resume, :job_id)
   end
 
 end
