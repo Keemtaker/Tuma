@@ -10,6 +10,7 @@ gem 'redis'
 gem 'sqlite3'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'rails_admin', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
