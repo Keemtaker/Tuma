@@ -25,6 +25,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'summernote-rails'
 
+gem "letter_opener", group: :development
 
 
 group :development do
@@ -32,6 +33,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
