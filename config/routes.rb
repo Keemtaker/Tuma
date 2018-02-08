@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root to: 'companies#new'
     resources :jobs, only: [:index] do
