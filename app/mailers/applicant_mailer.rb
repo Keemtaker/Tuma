@@ -10,10 +10,10 @@ class ApplicantMailer < ApplicationMailer
     mail(to: @applicant.email, subject: 'Job Application')
   end
 
-  # def applicant_info(applicant)
-  #   @applicant = applicant
-  #   mail(to: @applicant.job.email, subject: 'Applicant Details')
-  # end
+  def applicant_info(applicant)
+    @applicant = applicant
+    mail(to: @applicant.job.email, subject: 'Applicant Details')
+  end
 
 
 end
