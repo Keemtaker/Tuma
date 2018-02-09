@@ -24,7 +24,8 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'summernote-rails'
+gem 'trix'
+
 
 gem "letter_opener", group: :development
 
