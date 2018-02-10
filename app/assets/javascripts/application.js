@@ -1,9 +1,7 @@
 //= require jquery
-
+//= require trix
 //= require rails-ujs
 //= require bootstrap-sprockets
-//= require summernote
-//= require summernote-init
 //= require industry
 //= require perk_choice
 

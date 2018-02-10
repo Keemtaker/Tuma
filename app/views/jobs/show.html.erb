@@ -20,7 +20,7 @@
 <div class="container">
   <div class="row pitch-box">
     <div style="margin-bottom:10px;" class="col-md-6">
-       <%= @job.pitch %>
+       <%= sanitize @job.pitch %>
     </div>
     <div class="col-md-5 col-md-offset-1 summary-box">
      <div class="location">
@@ -34,7 +34,7 @@
 
   <div class="row job-long-text">
     <div class="col-md-10">
-      <%= @job.description %>
+      <%= sanitize @job.description %>
     </div>
   </div>
 
