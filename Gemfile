@@ -18,13 +18,15 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0'
 gem 'coffee-rails'
 
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'trix'
+gem 'ransack'
+
 
 
 gem "letter_opener", group: :development
