@@ -3,12 +3,26 @@
 <div class="col-sm-9">
 <h1>Here are the available jobs</h1>
 
-<%= search_form_for @search, :id => 'jobs_search' do |f| %>
+<%= search_form_for @search, :class => 'jobs_search' do |f| %>
   <%= f.label :salary_or_job_type_or_title_cont %>
   <%= f.search_field :salary_or_job_type_or_title_cont %>
   <%= f.submit "search" %>
 <% end %>
-  <div id="jobs"><%= render 'jobs' %></div>
+
+<% new_roles = [] %>
+<%= search_form_for @search, :class => 'filters_click' do |f| %>
+  <% @jobs.each do |job| %>
+    <% new_roles << job.role %>
+  <% end %>
+
+  <% new_roles.uniq.each do |new| %>
+    <%= check_box_tag('q[role_eq_any][]', new) %>
+        <%= new %>
+    <% end %>
+    <%= f.submit "Search" %>
+<% end %>
+
+  <div class="jobs"><%= render 'jobs' %></div>
 
 
 </div>
