@@ -2,7 +2,8 @@ class JobsController < ApplicationController
     skip_before_action :authenticate_user!, only: :index
 
   def index
-     @jobs = Job.all
+    @search = Job.ransack(params[:q])
+    @jobs = @search.result(distinct: true)
   end
 
 
