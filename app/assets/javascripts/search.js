@@ -4,13 +4,4 @@ $(".jobs_search input").keyup(function() {
     return false;
   });
 
-// $(function(){
-//     $('.filters_click').click(function() {
-//         if($(this).is(':checked'))
-//             alert('checked');
-//         else
-//             alert('unchecked');
-//     });
-// });
-
 
