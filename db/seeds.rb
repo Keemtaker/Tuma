@@ -42,53 +42,53 @@ software_list = [
 
 Company.create!(software_list)
 
-adidas_description = "Employing more than 60,000 people in over 160 countries, we produce more than 850 million product units every year and generate sales of € 19 billion (all figures relate to 2016). These numbers alone can easily suggest that adidas is quite a complex organisation. True. But we keep things simple, lean and fast."
-nike_description = "Because we exist to serve athletes, we dare to design the future of sport. To us, innovation is about elevating human potential. We obsess the needs of the world’s best athletes, using their insights to create products that are beautiful and useful for everyone. To make big leaps, we take big risks. Incremental change won’t get us to where we want to go fast enough. So we pursue moonshots — like developing the first self-lacing shoe, running the first two-hour marathon, and committing to 100% renewable energy use in our facilities."
-rolex_description = "Pioneer in the development of the wristwatch, Rolex designs, develops and produces in-house all the essential components of its watches, from the casting of the gold alloys to the machining, crafting, assembly and finishing of the movement, case, dial and bracelet."
+# adidas_description = "Employing more than 60,000 people in over 160 countries, we produce more than 850 million product units every year and generate sales of € 19 billion (all figures relate to 2016). These numbers alone can easily suggest that adidas is quite a complex organisation. True. But we keep things simple, lean and fast."
+# nike_description = "Because we exist to serve athletes, we dare to design the future of sport. To us, innovation is about elevating human potential. We obsess the needs of the world’s best athletes, using their insights to create products that are beautiful and useful for everyone. To make big leaps, we take big risks. Incremental change won’t get us to where we want to go fast enough. So we pursue moonshots — like developing the first self-lacing shoe, running the first two-hour marathon, and committing to 100% renewable energy use in our facilities."
+# rolex_description = "Pioneer in the development of the wristwatch, Rolex designs, develops and produces in-house all the essential components of its watches, from the casting of the gold alloys to the machining, crafting, assembly and finishing of the movement, case, dial and bracelet."
 
-p "Creating Fashion Companies"
-fashion_list = [
-  {name: "Adidas", description: adidas_description, website: "https://www.adidas.com/", location: "Herzogenaurach", address: "Adi-Dassler-Straße 1, 91074 Herzogenaurach, Germany", user: User.first, perks: saved_perks.uniq.sample(7), industries: fashion_industry },
-  {name: "Nike", description: nike_description, website: "https://www.nike.com/", location: "Beaverton", address: "One Bowerman Drive. Beaverton, OR 97005.", user: User.first, perks: saved_perks.uniq.sample(3), industries: fashion_industry },
-  {name: "Rolex", description: rolex_description, website: "https://www.rolex.com/", location: "Geneva", address: "Rue François-Dussaud 3-5-7 1211 Geneva 26", user: User.first, perks: saved_perks.uniq.sample(10), industries: fashion_industry }]
+# p "Creating Fashion Companies"
+# fashion_list = [
+#   {name: "Adidas", description: adidas_description, website: "https://www.adidas.com/", location: "Herzogenaurach", address: "Adi-Dassler-Straße 1, 91074 Herzogenaurach, Germany", user: User.first, perks: saved_perks.uniq.sample(7), industries: fashion_industry },
+#   {name: "Nike", description: nike_description, website: "https://www.nike.com/", location: "Beaverton", address: "One Bowerman Drive. Beaverton, OR 97005.", user: User.first, perks: saved_perks.uniq.sample(3), industries: fashion_industry },
+#   {name: "Rolex", description: rolex_description, website: "https://www.rolex.com/", location: "Geneva", address: "Rue François-Dussaud 3-5-7 1211 Geneva 26", user: User.first, perks: saved_perks.uniq.sample(10), industries: fashion_industry }]
 
-Company.create!(fashion_list)
+# Company.create!(fashion_list)
 
-barclays_description = "Our common purpose is to help people achieve their ambitions – in the right way. This sits at the core of our business and underpins everything that we do. We believe that only a business driven by strong values can deliver strong, sustainable returns."
-stripe_description = "Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world."
-mastercard_description = "For 50 years, Mastercard® has been transforming how the world pays and gets paid. What started as a small group of bankers is now a driving force in the payments industry."
+# barclays_description = "Our common purpose is to help people achieve their ambitions – in the right way. This sits at the core of our business and underpins everything that we do. We believe that only a business driven by strong values can deliver strong, sustainable returns."
+# stripe_description = "Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world."
+# mastercard_description = "For 50 years, Mastercard® has been transforming how the world pays and gets paid. What started as a small group of bankers is now a driving force in the payments industry."
 
-p "Creating Finance Companies"
-finance_list = [
-  {name: "Barclays", description: barclays_description, website: "https://www.barclays.com/", location: "London", address: "1 Churchill Place, Canary Wharf, London", user: User.first, perks: saved_perks.uniq.sample(12), industries: finance_industry },
-  {name: "Stripe", description: stripe_description, website: "https://www.stripe.com/", location: "San Francisco", address: "Headquarters. 185 Berry Street. Suite 550. San Francisco, CA 94107.", user: User.first, perks: saved_perks.uniq.sample(14), industries: finance_industry },
-  {name: "Mastercard", description: mastercard_description, website: "https://www.mastercard.com/", location: "New York", address: "2000 Purchase Street, New York", user: User.first, perks: saved_perks.uniq.sample(3), industries: finance_industry }]
+# p "Creating Finance Companies"
+# finance_list = [
+#   {name: "Barclays", description: barclays_description, website: "https://www.barclays.com/", location: "London", address: "1 Churchill Place, Canary Wharf, London", user: User.first, perks: saved_perks.uniq.sample(12), industries: finance_industry },
+#   {name: "Stripe", description: stripe_description, website: "https://www.stripe.com/", location: "San Francisco", address: "Headquarters. 185 Berry Street. Suite 550. San Francisco, CA 94107.", user: User.first, perks: saved_perks.uniq.sample(14), industries: finance_industry },
+#   {name: "Mastercard", description: mastercard_description, website: "https://www.mastercard.com/", location: "New York", address: "2000 Purchase Street, New York", user: User.first, perks: saved_perks.uniq.sample(3), industries: finance_industry }]
 
-Company.create!(finance_list)
+# Company.create!(finance_list)
 
-ea_description = "Electronic Arts Inc. is a leading global interactive entertainment software company. EA delivers games, content and online services for Internet-connected consoles, personal computers, mobile phones and tablets."
-beats_description = "Beats by Dr. Dre (Beats) is a leading audio brand founded in 2006 by Dr. Dre and Jimmy Iovine. Through its family of premium consumer headphones, earphones and speakers, Beats has introduced an entirely new generation to the possibilities of premium sound entertainment. The brand’s continued success helps bring the energy, emotion and excitement of playback in the recording studio back to the listening experience for music lovers worldwide. Beats was acquired by Apple Inc. in July 2014."
-hp_description = "Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent. To engineer experiences that amaze. We won’t stop pushing ahead, because you won’t stop pushing ahead. You’re reinventing how you work. How you play. How you live. With our technology, you’ll reinvent your world."
+# ea_description = "Electronic Arts Inc. is a leading global interactive entertainment software company. EA delivers games, content and online services for Internet-connected consoles, personal computers, mobile phones and tablets."
+# beats_description = "Beats by Dr. Dre (Beats) is a leading audio brand founded in 2006 by Dr. Dre and Jimmy Iovine. Through its family of premium consumer headphones, earphones and speakers, Beats has introduced an entirely new generation to the possibilities of premium sound entertainment. The brand’s continued success helps bring the energy, emotion and excitement of playback in the recording studio back to the listening experience for music lovers worldwide. Beats was acquired by Apple Inc. in July 2014."
+# hp_description = "Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent. To engineer experiences that amaze. We won’t stop pushing ahead, because you won’t stop pushing ahead. You’re reinventing how you work. How you play. How you live. With our technology, you’ll reinvent your world."
 
-p "Creating Finance Companies"
-hardware_list = [
-  {name: "ElectronicArts", description: ea_description, website: "https://www.ea.com/", location: "Redwood City", address: "209 Redwood Shores Parkway Redwood City, CA 94065", user: User.first, perks: saved_perks.uniq.sample(4), industries: hardware_industry },
-  {name: "Beats", description: beats_description, website: "https://beatsbydre.com/", location: "California", address: "1 Infinite Loop; Cupertino, CA 95014", user: User.first, perks: saved_perks.uniq.sample(6), industries: hardware_industry },
-  {name: "Hewlett-Packard", description: hp_description, website: "https://www.mastercard.com/", location: "Palo Alto", address: "Palo Alto, CA (1501 Buildings) HP Inc. 1501 Page Mill Road, Palo Alto, CA 94304.", user: User.first, perks: saved_perks.uniq.sample(9), industries: hardware_industry }]
+# p "Creating Finance Companies"
+# hardware_list = [
+#   {name: "ElectronicArts", description: ea_description, website: "https://www.ea.com/", location: "Redwood City", address: "209 Redwood Shores Parkway Redwood City, CA 94065", user: User.first, perks: saved_perks.uniq.sample(4), industries: hardware_industry },
+#   {name: "Beats", description: beats_description, website: "https://beatsbydre.com/", location: "California", address: "1 Infinite Loop; Cupertino, CA 95014", user: User.first, perks: saved_perks.uniq.sample(6), industries: hardware_industry },
+#   {name: "Hewlett-Packard", description: hp_description, website: "https://www.mastercard.com/", location: "Palo Alto", address: "Palo Alto, CA (1501 Buildings) HP Inc. 1501 Page Mill Road, Palo Alto, CA 94304.", user: User.first, perks: saved_perks.uniq.sample(9), industries: hardware_industry }]
 
-Company.create!(hardware_list)
+# Company.create!(hardware_list)
 
-cnn_description = "CNN.com is among the world's leaders in online news and information delivery. Staffed 24 hours, seven days a week by a dedicated staff in CNN's world headquarters in Atlanta, Georgia, and in bureaus worldwide, CNN.com relies heavily on CNN's global team of almost 4,000 news professionals. CNN.com features the latest multimedia technologies, from live video streaming to audio packages to searchable archives of news features and background information. The site is updated continuously throughout the day."
-whatsapp_description = "More than 1 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere. WhatsApp is free2 and offers simple, secure, reliable messaging and calling, available on phones all over the world."
-twitter_description = "Give everyone the power to create and share ideas and information instantly, without barriers."
+# cnn_description = "CNN.com is among the world's leaders in online news and information delivery. Staffed 24 hours, seven days a week by a dedicated staff in CNN's world headquarters in Atlanta, Georgia, and in bureaus worldwide, CNN.com relies heavily on CNN's global team of almost 4,000 news professionals. CNN.com features the latest multimedia technologies, from live video streaming to audio packages to searchable archives of news features and background information. The site is updated continuously throughout the day."
+# whatsapp_description = "More than 1 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere. WhatsApp is free2 and offers simple, secure, reliable messaging and calling, available on phones all over the world."
+# twitter_description = "Give everyone the power to create and share ideas and information instantly, without barriers."
 
-p "Creating Media Companies"
-media_list = [
-  {name: "CNN", description: cnn_description, website: "https://edition.cnn.com/", location: "Atlanta", address: "190 Marietta St, Atlanta, GA 30303, USA", user: User.first, perks: saved_perks.uniq.sample(9), industries: media_industry },
-  {name: "Whatsapp", description: whatsapp_description, website: "https://whatsapp.com/", location: "Menlo Park", address: "WhatsApp Inc. 1601 Willow Road", user: User.first, perks: saved_perks.uniq.sample(7), industries: media_industry },
-  {name: "Twitter", description: twitter_description, website: "https://www.twitter.com/", location: "San Francisco", address: "1355 Market St #900, San Francisco, CA 94103, USA", user: User.first, perks: saved_perks.uniq.sample(10), industries: media_industry }]
+# p "Creating Media Companies"
+# media_list = [
+#   {name: "CNN", description: cnn_description, website: "https://edition.cnn.com/", location: "Atlanta", address: "190 Marietta St, Atlanta, GA 30303, USA", user: User.first, perks: saved_perks.uniq.sample(9), industries: media_industry },
+#   {name: "Whatsapp", description: whatsapp_description, website: "https://whatsapp.com/", location: "Menlo Park", address: "WhatsApp Inc. 1601 Willow Road", user: User.first, perks: saved_perks.uniq.sample(7), industries: media_industry },
+#   {name: "Twitter", description: twitter_description, website: "https://www.twitter.com/", location: "San Francisco", address: "1355 Market St #900, San Francisco, CA 94103, USA", user: User.first, perks: saved_perks.uniq.sample(10), industries: media_industry }]
 
-Company.create!(media_list)
+# Company.create!(media_list)
 
 #Need to create Company new
 #name, description, website, location, address, user, photo, logo, perks, industries
@@ -103,3 +103,37 @@ Company.all.each do |company|
   company.save
 end
 p "Success!!!"
+
+
+developer_one = "As a Senior Software Engineer, you and your team will be responsible for developing the core of our wireless streaming software, which is responsible for capturing, encoding and transmitting audio and video data, then receiving, decoding and rendering the content on the devices. This is low-level software which runs under CPU, memory and time constraints, requiring significant focus on performance, concurrency, and resource lifecycles.
+
+Our talented engineers are given significant ownership and responsibility over projects. We value rapid iteration, continuous integration and testing, and we are serious about producing high-quality, maintainable software. Frequent code reviews, linting, and pairing are all integral components of our engineering culture. We encourage experimenting with new technologies and constantly challenge ourselves to improve our code, processes, and systems.
+
+Requirements
+
+Proven experience developing highly performant software in C or C++
+Deep understanding of concurrency, memory management and object lifecycles
+Experience developing cross-platform native code is a big plus
+Experience with network protocols and security is a big plus
+Experience with Windows APIs development is a plus
+Experience with real-time low-level programming is a plus
+Experience with assembly and embedded programming is a plus
+Experience designing C/C++ APIs/libraries is a plus
+Excellent English communication skills
+"
+#Creating Job new
+#title, role, description, company_id, job_type, keywords, salary, pitch, email, location
+#Create Job description for Developer, Engineer, Business, Sales, Consulting, Data Science
+key = "Developer Engineer Technology Scrum"
+e = "keemtaker@yahoo.com"
+
+p "Creating Developer One Job"
+software_list = [
+  {title: "Software Architect", description: developer_one, company: Company.first, pitch: Company.first.description, role: "Backend Developer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+  {title: "Web Engineer", description: developer_one, company: Company.second, pitch: Company.first.description, role: "Fullstack Developer", location: "Washington", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+  {title: "Software Developer", description: developer_one, company: Company.third, pitch: Company.first.description, role: "Engineer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" }]
+
+Job.create!(software_list)
+
+p "Success"
+
