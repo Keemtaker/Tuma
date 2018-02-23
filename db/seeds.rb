@@ -1,8 +1,19 @@
 
 # p "destroying companies"
-# Company.destroy_all
-# p "destroying jobs"
-# Job.destroy_all
+#   # Company.all.each do |company|
+#   #   unless company == Company.find(133)
+#   #     company.destroy
+#   #   end
+#   # end
+
+#   Company.destroy_all
+# # p "destroying jobs"
+#   # Job.all.each do |job|
+#   #   unless job == Job.find(26)
+#   #     job.destroy
+#   #   end
+#   # end
+
 # p "destroying industries"
 # Industry.destroy_all
 # p "destroying perks"
@@ -90,13 +101,13 @@
 
 # Company.create!(media_list)
 
-#Need to create Company new
-#name, description, website, location, address, user, photo, logo, perks, industries
-#name of tech companies [apple, Microsoft, Google]
-#name of fashion companies [adidas, nike, rolex]
-#name of  finance companies [Barclays, Stripe, Mastercard]
-#name of hardware companies [ElectronicArts, Beats, Hewlett-Packard]
-#name of Media companies [CNN, Watsapp, Twitter  ]
+# # Need to create Company new
+# # name, description, website, location, address, user, photo, logo, perks, industries
+# # name of tech companies [apple, Microsoft, Google]
+# # name of fashion companies [adidas, nike, rolex]
+# # name of  finance companies [Barclays, Stripe, Mastercard]
+# # name of hardware companies [ElectronicArts, Beats, Hewlett-Packard]
+# # name of Media companies [CNN, Watsapp, Twitter  ]
 # Company.all.each do |company|
 #   company.photo = Rails.root.join("app/assets/images/cover/#{company.name.gsub(" ","")}.jpg").open
 #   company.logo = Rails.root.join("app/assets/images/logo/#{company.name.gsub(" ","")}.svg").open
@@ -104,38 +115,55 @@
 # end
 # p "Success!!!"
 
+# developer_one = Job.find(30).description
+consultant_one = Job.find(65).description
 
-developer_one = "As a Senior Software Engineer, you and your team will be responsible for developing the core of our wireless streaming software, which is responsible for capturing, encoding and transmitting audio and video data, then receiving, decoding and rendering the content on the devices. This is low-level software which runs under CPU, memory and time constraints, requiring significant focus on performance, concurrency, and resource lifecycles.
-
-Our talented engineers are given significant ownership and responsibility over projects. We value rapid iteration, continuous integration and testing, and we are serious about producing high-quality, maintainable software. Frequent code reviews, linting, and pairing are all integral components of our engineering culture. We encourage experimenting with new technologies and constantly challenge ourselves to improve our code, processes, and systems.
-
-Requirements
-
-Proven experience developing highly performant software in C or C++
-Deep understanding of concurrency, memory management and object lifecycles
-Experience developing cross-platform native code is a big plus
-Experience with network protocols and security is a big plus
-Experience with Windows APIs development is a plus
-Experience with real-time low-level programming is a plus
-Experience with assembly and embedded programming is a plus
-Experience designing C/C++ APIs/libraries is a plus
-Excellent English communication skills
-"
-
-developer_two = Job.last.description
 #Creating Job new
 #title, role, description, company_id, job_type, keywords, salary, pitch, email, location
 #Create Job description for Developer, Engineer, Business, Sales, Consulting, Data Science
-key = "Developer Engineer Technology Scrum"
-e = "keemtaker@yahoo.com"
+ key = Job.find(65).keywords
+
+ e = "keemtaker@yahoo.com"
+ apple = Company.find_by(name: "CNN")
+ apple_pitch = apple.description
+ apple_location = apple.location
+ microsoft = Company.find_by(name: "Whatsapp")
+ microsoft_pitch = microsoft.description
+ microsoft_location = microsoft.location
+ google = Company.find_by(name: "Twitter")
+ google_pitch = google.description
+ google_location = google.location
+
+
+
+
+
+# p "Creating Developer One Job"
+# software_list = [
+#   {title: "Data & AI Scientist", description: developer_one, company: apple, pitch: apple_pitch, role: "Backend Developer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+#   {title: "D", description: developer_one, company: microsoft, pitch: microsoft_pitch, role: "Fullstack Developer", location: "Washington", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+#   {title: "Developer Intern", description: developer_one, company: google, pitch: google_pitch, role: "Engineer", location: "California", job_type: "Internship", keywords: key, email: e, salary: "Unpaid" }]
+# Job.create!(software_list)
 
 p "Creating Developer One Job"
 software_list = [
-  {title: "Software Architect", description: developer_two, company: Company.first, pitch: Company.first.description, role: "Backend Developer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
-  {title: "Web Engineer", description: developer_two, company: Company.second, pitch: Company.first.description, role: "Fullstack Developer", location: "Washington", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
-  {title: "Software Developer", description: developer_two, company: Company.third, pitch: Company.first.description, role: "Engineer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" }]
+  {title: "Customer Service Success", description: consultant_one, company: apple, pitch: apple_pitch, role: "Customer Service", location: apple_location, job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+  {title: "Customer Service Support", description: consultant_one, company: microsoft, pitch: microsoft_pitch, role: "Customer Service", location: microsoft_location, job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+  {title: "Customer Service Agent", description: consultant_one, company: google, pitch: google_pitch, role: "Customer Service", location: google_location, job_type: "Full-time", keywords: key, email: e, salary: "Paid" }]
 
 Job.create!(software_list)
 
+#  hardware_list = [
+#    {name: "ElectronicArts", description: ea_description, website: "https://www.ea.com/", location: "Redwood City", address: "209 Redwood Shores Parkway Redwood City, CA 94065", user: User.first, perks: saved_perks.uniq.sample(4), industries: hardware_industry },
+#    {name: "Beats", description: beats_description, website: "https://beatsbydre.com/", location: "California", address: "1 Infinite Loop; Cupertino, CA 95014", user: User.first, perks: saved_perks.uniq.sample(6), industries: hardware_industry },
+#    {name: "Hewlett-Packard", description: hp_description, website: "https://www.mastercard.com/", location: "Palo Alto", address: "Palo Alto, CA (1501 Buildings) HP Inc. 1501 Page Mill Road, Palo Alto, CA 94304.", user: User.first, perks: saved_perks.uniq.sample(9), industries: hardware_industry }]
+
+# # Company.create!(hardware_list)
+
+
 p "Success"
 
+
+# barclays_description = "Our common purpose is to help people achieve their ambitions – in the right way. This sits at the core of our business and underpins everything that we do. We believe that only a business driven by strong values can deliver strong, sustainable returns."
+# stripe_description = "Stripe is the best way to accept payments online and in mobile apps. We handle billions of dollars every year for forward-thinking businesses around the world."
+# mastercard_description = "For 50 years, Mastercard® has been transforming how the world pays and gets paid. What started as a small group of bankers is now a driving force in the payments industry."
