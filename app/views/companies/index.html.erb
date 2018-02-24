@@ -1,4 +1,7 @@
 
 <% @companies.each do |company| %>
   <h1><%= company.name %></h1>
+  <h1><%= company.description %></h1>
+  <%= cl_image_tag company.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag company.logo, height: 300, width: 400, crop: :fill %>
 <% end %>

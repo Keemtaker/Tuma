@@ -1,13 +1,15 @@
 <% @jobs.each do |job| %>
 <div class="job-bar">
   <div class="logo">
-    <a href="https://thehub.dk/jobs/company/crowdiocom"><img src="https://thehub.dk/files/5735c74be208e16a67106e52/logo_upload-37439e7643a941b8c15f6eb47bbb0446.png" class="company-logo"/></a>
+  <%= link_to company_path(job.company) do %>
+    <%= image_tag job.company.logo, class: "company-logo" %>
+  <% end %>
   </div>
-  <a href="https://thehub.dk/jobs/swedish-chat-agents" class="text">
+  <%= link_to company_job_path(job.company, job), class: "text" do %>
   <div class="job-title">
     <%= job.title %>
-  </div><span class="company-name">Crowdio.com</span>
-  </a>
+  </div><span class="company-name"><%= job.company.name %></span>
+  <% end %>
   <div class="details hidden-xs">
     <div class="job-description">
       <%= job.job_type %><br><%= job.salary %>

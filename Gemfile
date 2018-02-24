@@ -24,9 +24,8 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'trix'
 gem 'ransack'
-
+gem 'trix'
 
 
 gem "letter_opener", group: :development
