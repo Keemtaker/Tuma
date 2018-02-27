@@ -221,10 +221,27 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 @media only screen
 and (min-device-width : 768px) {
   #company_photo {
-    margin-left: 50px;
+    margin-left: 90px;
     display: inline-flex;
+    margin-top: 50px;
   }
 }
+
+@media only screen
+and (min-device-width : 768px) {
+  .upload-margin {
+    margin-top: 30px;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  .perk-margin {
+    margin-top: 70px;
+  }
+}
+
+
 
 // #company_logo {
 //   padding: 10px 10px;
@@ -237,7 +254,7 @@ and (min-device-width : 768px) {
 @media only screen
 and (min-device-width : 768px) {
   #company_logo {
-    margin-left: 50px;
+    margin-left: 70px;
     display: inline-flex;
   }
 }
@@ -254,23 +271,22 @@ and (min-device-width : 768px) {
 .company-color {
   background-color: white;
 }
-// .trix-button--icon-code {
-//   display: none;
-// }
 
-// .trix-content {
-//   height: 200px;
-// }
+.helper-text {
+  font-size: 15px;
+  font-style: italic;
+}
 
 
 input[type="file"]::-webkit-file-upload-button
   {
-      color: #999999;
+  color: #999999;
   border: 1px solid #999999;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
+
   }
 input[type="file"]::-webkit-file-upload-button:hover
   {
@@ -278,3 +294,14 @@ input[type="file"]::-webkit-file-upload-button:hover
   text-decoration: none;
   color: #999999;
   }
+
+  label {
+    word-break: break-word;
+  }
+// .trix-button--icon-code {
+//   display: none;
+// }
+
+// .trix-content {
+//   height: 200px;
+// }
