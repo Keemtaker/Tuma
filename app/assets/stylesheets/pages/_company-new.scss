@@ -210,18 +210,10 @@ and (-webkit-min-device-pixel-ratio: 1)  {
   }
 }
 
-// #company_photo {
-//   padding: 10px 10px;
-//   background-color: lightgray;
-//   margin-top: 30px;
-// }
-
-
-
 @media only screen
 and (min-device-width : 768px) {
   #company_photo {
-    margin-left: 90px;
+    margin-left: 95px;
     display: inline-flex;
     margin-top: 50px;
   }
@@ -241,21 +233,18 @@ and (min-device-width : 768px) {
   }
 }
 
-
-
-// #company_logo {
-//   padding: 10px 10px;
-//   background-color: lightgray;
-//   margin-top: 30px;
-// }
-
-
-
 @media only screen
 and (min-device-width : 768px) {
   #company_logo {
     margin-left: 70px;
     display: inline-flex;
+  }
+}
+
+@media only screen
+and (max-device-width : 667px) {
+  label {
+    word-break: break-word;
   }
 }
 
@@ -277,6 +266,11 @@ and (min-device-width : 768px) {
   font-style: italic;
 }
 
+.create-style {
+  border-radius: 50px;
+  margin-bottom: 70px;
+}
+
 
 input[type="file"]::-webkit-file-upload-button
   {
@@ -295,9 +289,7 @@ input[type="file"]::-webkit-file-upload-button:hover
   color: #999999;
   }
 
-  label {
-    word-break: break-word;
-  }
+
 // .trix-button--icon-code {
 //   display: none;
 // }

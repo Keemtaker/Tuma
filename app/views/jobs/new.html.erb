@@ -1,3 +1,4 @@
+<div class="company-color">
 <div class="container">
   <h2 class=style-section>Job Basics</h2>
   <div class="main-body">
@@ -27,14 +28,28 @@
    <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-      <%= f.input :description, as: :text, :label => "What do you do", as: :trix_editor %>
+      <%= f.input :description, as: :text, :label => "Job Description", as: :trix_editor %>
     </div>
    </div>
 
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
+      <%= f.input :location, :label => "Job location or City" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
       <%= f.input :job_type, collection: ["Full-time", "Part-time", "Internship", "Student", "Co-founder", "Freelance"], :label => "Job Type" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :salary, collection: ["Paid", "Unpaid", "Commission"], :label => "Salary" %>
     </div>
   </div>
 
@@ -48,20 +63,20 @@
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-      <%= f.input :salary, collection: ["Paid", "Unpaid", "Commission"], :label => "Salary" %>
+      <%= f.input :email, :label => "Recruiter Email" %>
     </div>
   </div>
-
 
  <div class="form-group">
   <label class="col-md-1 control-label"></label>
   <div class="col-md-9">
-    <%= f.submit 'Create', class: "btn btn-success" %>
+    <%= f.submit 'Post Job', class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
   </div>
 </div>
 
 <% end %>
 </form>
+</div>
 </div>
 </div>
 
