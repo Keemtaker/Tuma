@@ -1,13 +1,3 @@
-main-body {
-    background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #555;
-
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
 input[type='number'] {
     -moz-appearance:textfield;
 }
@@ -19,11 +9,6 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.main-body .form-horizontal .control-label {
-    text-align: left;
-    color: gray;
-    font-style: italic;
-}
 
 
 
@@ -57,7 +42,7 @@ input::-webkit-inner-spin-button {
       height: 20px;
       margin: -10px 0 0;
       opacity: 0;
-      background: #37b2b2;
+      background: #5DB1D1;
       transform: translate3d(-40px, 0, 0) scale(0.5);
       transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
     }
@@ -199,6 +184,10 @@ hr {
 
 
 
+.main-body .form-horizontal .control-label {
+    text-align: left;
+    color: #1E222C;
+}
 
 .industry-choices {
   display: grid;
@@ -221,46 +210,85 @@ and (-webkit-min-device-pixel-ratio: 1)  {
   }
 }
 
-#company_photo {
-  padding: 10px 10px;
-  background-color: lightgray;
-  margin-top: 30px;
-}
-
-
-
 @media only screen
 and (min-device-width : 768px) {
   #company_photo {
-    margin-left: 50px;
+    margin-left: 95px;
     display: inline-flex;
+    margin-top: 50px;
   }
 }
 
-#company_logo {
-  padding: 10px 10px;
-  background-color: lightgray;
-  margin-top: 30px;
+@media only screen
+and (min-device-width : 768px) {
+  .upload-margin {
+    margin-top: 30px;
+  }
 }
 
-
+@media only screen
+and (min-device-width : 768px) {
+  .perk-margin {
+    margin-top: 70px;
+  }
+}
 
 @media only screen
 and (min-device-width : 768px) {
   #company_logo {
-    margin-left: 50px;
+    margin-left: 70px;
     display: inline-flex;
+  }
+}
+
+@media only screen
+and (max-device-width : 667px) {
+  label {
+    word-break: break-word;
   }
 }
 
 .style-section {
   padding: 20px 20px;
-  background-color: lightgray;
+  background-color: #5DB1D1;
+  color: white;
   width: fit-content;
   border-radius: 40px;
-  font-style: italic;;
   margin-bottom: 50px;
 }
+
+.company-color {
+  background-color: white;
+}
+
+.helper-text {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.create-style {
+  border-radius: 50px;
+  margin-bottom: 70px;
+}
+
+
+input[type="file"]::-webkit-file-upload-button
+  {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+
+  }
+input[type="file"]::-webkit-file-upload-button:hover
+  {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+  }
+
 
 // .trix-button--icon-code {
 //   display: none;
@@ -269,4 +297,3 @@ and (min-device-width : 768px) {
 // .trix-content {
 //   height: 200px;
 // }
-

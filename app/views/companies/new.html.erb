@@ -1,5 +1,6 @@
+<div class="company-color">
 <div class="container">
-  <h2 class=style-section>Company Profile</h2>
+  <h2 class="style-section">Company Profile</h2>
   <div class="main-body">
     <%= simple_form_for [@company], html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
     <div class="form-group">
@@ -12,14 +13,13 @@
    <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-      <%= f.input :description, as: :text, :label => "What do you do" %>
+      <%= f.input :description, as: :text, :label => "Company description", as: :trix_editor %>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-        <%= f.input :website, :label => "website" %>
     </div>
   </div>
 
@@ -58,10 +58,29 @@
     </div>
   </div>
 
+ <h2 class="style-section">Image Upload</h2>
+ <p1>In this section, you essentially display your company's swagger.<br />
+ Upload your company's best images and make it look smashing</p1>
+<div class="form-group upload-margin">
+  <label class="col-md-1 control-label"></label>
+  <div class="col-md-9">
+    <%= f.input :logo, :label => "Company Logo" %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+</div>
+ <div class="form-group">
+  <label class="col-md-1 control-label"></label>
+  <div class="col-md-9">
+    <%= f.input :photo, :label => "Cover Image", wrapper_html: { class: 'photo-style' }  %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <span class="helper-text">Upload a broad image that represents your company</span>
+  </div>
+</div>
 
-  <h2 class=style-section>Perks & Benefits</h2>
 
-  <div class="form-group flex-form">
+  <h2 class="style-section perk-margin">Perks & Benefits</h2>
+  <p1>Select perks and benefits that your company offers to employees</p1>
+  <div class="form-group flex-form upload-margin">
     <div class="col-md-9">
       <div class="category-choices">
         <% Perk.all.each do |perk| %>
@@ -107,7 +126,7 @@
          <% when "Career Progression" %>
          <i class="fa fa-black-tie fa-3x" aria-hidden="true"></i>
          <br>
-         <% when "Flexible Working Hours" %>
+         <% when "Flexible Work Hours" %>
          <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
          <br>
          <% when "Pet Friendly Office" %>
@@ -122,34 +141,13 @@
  </div>
 
 
- <h2 class=style-section>Image Upload</h2>
- <p1>In this section, you essentially display your company's swagger.<br />
- Upload your company's best images and make it look smashing</p1>
 
- <div class="form-group">
-  <label class="col-md-1 control-label"></label>
-  <div class="col-md-9">
-    <%= f.input :photo, :label => "Cover Image", wrapper_html: { class: 'photo-style' }  %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <p1>Upload a broad image that represents your company</p1>
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-1 control-label"></label>
-  <div class="col-md-9">
-    <%= f.input :logo, :label => "Company Logo", wrapper_html: { class: 'photo-style' }  %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <p1>Upload Company logo</p1>
-  </div>
-</div>
 
 
 <div class="form-group">
   <label class="col-md-1 control-label"></label>
   <div class="col-md-9">
-    <%= f.submit 'Create', class: "btn btn-success" %>
-
+    <%= f.submit 'Create Company Profile', class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
   </div>
 </div>
 
@@ -159,6 +157,7 @@
 <!-- Employment Input -->
 <% end %>
 </form>
+</div>
 </div>
 </div>
 
