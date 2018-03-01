@@ -1,7 +1,32 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <% @companies.each do |company| %>
+          <%= image_tag company.logo, class: "show-logo" %>
+          <h1><%= company.name %></h1>
+      <% end %>
+    </div>
+  </div>
+</div>
+ -->
+ <div class="container">
+  <div class="row">
+      <% @companies.each do |company| %>
+    <div class="col-md-4">
+      <div class="card" style="height: 100px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path company.photo %>');">
+        <div class="job-card">
+          <%= image_tag company.logo, class: "show-logo" %>
+          <h1><%= company.name %></h1>
+          <h5 style="color: #5DB1D1";><%= company.location %></h5>
+        </div>
+      </div>
 
-<% @companies.each do |company| %>
-  <h1><%= company.name %></h1>
-  <h1><%= company.description %></h1>
-  <%= cl_image_tag company.photo, height: 300, width: 400, crop: :fill %>
-  <%= cl_image_tag company.logo, height: 300, width: 400, crop: :fill %>
-<% end %>
+    </div>
+          <% end %>
+  </div>
+</div>
+
+
+
+
+
