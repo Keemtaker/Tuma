@@ -12,8 +12,14 @@
        <%= sanitize @company.description %>
      </div>
 
+      <div style="margin-top: 40px;" class="col-md-12">
+        <% if @company.website %>
+          <%= link_to "Website", @company.website, :target => "_blank", :class=>"btn btn-success" %>
+        <% end %>
+      </div>
 
-     <div class="col-md-10" style="margin-top: 80px; background-color: #5DB1D1; margin-bottom: 140px;">
+
+     <div class="col-md-10" style="margin-top: 40px; background-color: #5DB1D1; margin-bottom: 140px;">
        <% if @company.jobs %>
        <h4 class="style-section">Open positions at <%= @company.name %></h4>
        <% @company.jobs.each do |job| %>
@@ -86,7 +92,7 @@
          <% when "Career Progression" %>
          <i class="fa fa-black-tie fa-3x" aria-hidden="true"></i>
          <br>
-         <% when "Flexible Working Hours" %>
+         <% when "Flexible Work Hours" %>
          <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
          <br>
          <% when "Pet Friendly Office" %>

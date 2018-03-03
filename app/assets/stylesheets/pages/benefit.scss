@@ -1,31 +1,3 @@
-// .fa{
-//   padding-top: 3px;
-// }
-
-// .fa-circle{
-//   color: #DA3849;
-//   font-size: 8px;
-// }
-
-//   .btn {
-//     width: 100%;
-//     padding: 15px;
-//     font-weight: bold;
-//     border-radius: 5px;
-//     font-size: 20px;
-//   }
-  // .control-label{
-  //   color: #CFCFD3 !important;
-  // }
-
-
-
-// FILTER BUTTONS
-// .category-choices {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center
-// }
 
 .category-choice {
   background: #CFCFD3;
@@ -35,7 +7,6 @@
   height: 117px;
   flex: 1 0 33%; /* or whatever width you want. */
 
-  // display: inline-block;
   border-radius: 5px;
   opacity: 0.4;
   text-align: center;
@@ -49,14 +20,6 @@
     opacity: 1;
   }
 }
-
-
-// @media (max-width: 736px) {
-//   .category-choice {
-//     display: grid;
-//     grid-template-rows: 30% 30% 30%;
-//   }
-// }
 
 
 .category-choices {

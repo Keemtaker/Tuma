@@ -2,7 +2,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root to: 'companies#new'
+  authenticated :user do
+  root :to => 'companies#new', as: :authenticated_root
+end
+
+  root to: 'jobs#index'
     resources :jobs, only: [:index] do
       resources :applicants, only: [:show, :new, :create]
       get 'applicants/:id/dashboard', to: "companies#dashboard", on: :member
