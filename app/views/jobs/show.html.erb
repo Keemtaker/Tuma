@@ -19,21 +19,33 @@
   <div class="container">
     <div class="row pitch-box">
       <div style="margin-bottom:10px;" class="col-md-6">
-       <%= sanitize @job.pitch %>
+       <%= sanitize @job.pitch %> <br />
+        <br />
+      <%= link_to "see more about #{@job.company.name}", company_path(@job.company), :class=>"btn btn-primary" %>
      </div>
+
+
      <div class="col-md-5 col-md-offset-1 summary-box">
+      <% if @job.location %>
        <div class="location">
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @job.location %>
       </div>
+      <% end %>
+      <% if @job.job_type %>
       <div style="margin-top: 10px;">
         <i class="fa fa-clock-o" aria-hidden="true"></i> <%= @job.job_type %>
       </div>
+      <% end %>
+      <% if @job.role %>
       <div style="margin-top: 10px;">
         <i class="fa fa-black-tie" aria-hidden="true"></i> <%= @job.role %>
       </div>
+      <% end %>
+      <% if @job.keywords %>
       <div style="margin-top:10px;" class="keywords">
         <i class="fa fa-key" aria-hidden="true"></i> <%= @job.keywords %>
       </div>
+      <% end %>
     </div>
   </div>
 

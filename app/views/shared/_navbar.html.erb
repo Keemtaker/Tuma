@@ -3,8 +3,6 @@
   <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
-<!--   <div class="navbar-wagon-right hidden-xs hidden-sm">
--->
 
 <div class="nav-center hidden-sm hidden-xs">
   <%= link_to "Jobs", jobs_path %>
@@ -13,7 +11,7 @@
 </div>
 
 <% if !current_user %>
-<h4>Hiring?</h4>
+<h4 style="color: gray; font-style: italic;">Hiring?</h4>
 <%= link_to "Sign-up", new_user_registration_path, class: "navbar-wagon-item navbar-btn hidden-xs hidden-sm"%>
 <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-btn" %>
 <% else %>

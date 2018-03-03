@@ -71,3 +71,11 @@
 .filter-style {
   margin-top: 20px;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: gray;
+}
