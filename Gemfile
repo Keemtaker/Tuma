@@ -6,11 +6,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
-gem 'sqlite3'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails_admin', '~> 1.2'
-gem 'pg', '~> 0.20'
+gem 'pg'
 
 
 gem 'autoprefixer-rails'
@@ -34,6 +33,7 @@ gem "letter_opener", group: :development
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3'
 end
 
 group :development, :test do
