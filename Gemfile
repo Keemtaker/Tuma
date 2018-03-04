@@ -25,7 +25,6 @@ gem 'turbolinks', '~> 5.0.0'
 gem 'coffee-rails'
 
 gem 'uglifier'
-gem 'webpacker'
 gem 'devise'
 gem 'ransack'
 gem 'trix'

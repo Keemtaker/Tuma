@@ -24,6 +24,10 @@ npm manifest:
     "devDependencies": {
       "webpack-dev-server": "^2.11.0"
     }
+  "scripts": {
+    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
+    "heroku-postbuild": "npm run webpack:deploy"
+  },
   }
 
 yarn manifest: 
@@ -6022,9 +6026,9 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  ReferenceError: Unknown language key integrityNodeDoesntMatch
-      at ConsoleReporter.lang (/usr/share/yarn/lib/cli.js:33004:13)
-      at /usr/share/yarn/lib/cli.js:57471:30
+  SyntaxError: /home/keemtaker/code/Project/tuma/package.json: Unexpected string in JSON at position 190
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:770:59
       at Generator.next (<anonymous>)
       at step (/usr/share/yarn/lib/cli.js:92:30)
       at /usr/share/yarn/lib/cli.js:103:13
