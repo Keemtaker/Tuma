@@ -47,3 +47,7 @@ production:
   database: tuma_production
   timeout: 5000
   pool: 5
+
+# production:
+#   <<: *default
+#   database: tuma_database_production

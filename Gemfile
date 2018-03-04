@@ -14,6 +14,7 @@ group :production do
 end
 
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -24,7 +25,6 @@ gem 'turbolinks', '~> 5.0.0'
 gem 'coffee-rails'
 
 gem 'uglifier'
-gem 'webpacker'
 gem 'devise'
 gem 'ransack'
 gem 'trix'
