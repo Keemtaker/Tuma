@@ -9,7 +9,9 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails_admin', '~> 1.2'
-gem 'pg'
+group :production do
+ gem 'pg', '~> 0.20'
+end
 
 
 gem 'autoprefixer-rails'
