@@ -115,22 +115,22 @@
 # end
 # p "Success!!!"
 
-developer_one = Job.find(1).description
+developer_one = Job.find(29).description
 # consultant_one = Job.find(65).description
 
 # #Creating Job new
 # #title, role, description, company_id, job_type, keywords, salary, pitch, email, location
 # #Create Job description for Developer, Engineer, Business, Sales, Consulting, Data Science
- key = Job.find(1).keywords
+ key = Job.find(29).keywords
 
  e = "keemtaker@yahoo.com"
- apple = Company.find_by(name: "Apple")
+ apple = Company.find_by(name: "CNN")
  apple_pitch = apple.description
  apple_location = apple.location
- microsoft = Company.find_by(name: "Microsoft")
+ microsoft = Company.find_by(name: "Whatsapp")
  microsoft_pitch = microsoft.description
  microsoft_location = microsoft.location
- google = Company.find_by(name: "Google")
+ google = Company.find_by(name: "Twitter")
  google_pitch = google.description
  google_location = google.location
 
@@ -140,9 +140,9 @@ developer_one = Job.find(1).description
 
 p "Creating Developer One Job"
 software_list = [
-  {title: "Web Engineer", description: developer_one, company: apple, pitch: apple_pitch, role: "Backend Developer", location: "California", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
-  {title: "Software Engineer", description: developer_one, company: microsoft, pitch: microsoft_pitch, role: "Fullstack Developer", location: "Washington", job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
-  {title: "Developer Intern", description: developer_one, company: google, pitch: google_pitch, role: "Engineer", location: "California", job_type: "Internship", keywords: key, email: e, salary: "Unpaid" }]
+  {title: "Customer Success Consultant", description: developer_one, company: apple, pitch: apple_pitch, role: "Customer Service", location: apple_location, job_type: "Full-time", keywords: key, email: e, salary: "Paid" },
+  {title: "Customer Service Agent", description: developer_one, company: microsoft, pitch: microsoft_pitch, role: "Other", location: microsoft_location, job_type: "Freelance", keywords: key, email: e, salary: "Commission" },
+  {title: "Customer Service", description: developer_one, company: google, pitch: google_pitch, role: "Customer Service", location: google_location, job_type: "Full-time", keywords: key, email: e, salary: "Paid" }]
 Job.create!(software_list)
 
 # p "Creating Developer One Job"
