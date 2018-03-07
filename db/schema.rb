@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180220173537) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "applicants", force: :cascade do |t|
-    t.integer "job_id"
+    t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "full_name"
@@ -32,15 +35,15 @@ ActiveRecord::Schema.define(version: 20180220173537) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "photo"
     t.string "logo"
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "company_industries", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "industry_id"
+    t.bigint "company_id"
+    t.bigint "industry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_industries_on_company_id"
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 20180220173537) do
   end
 
   create_table "company_perks", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "perk_id"
+    t.bigint "company_id"
+    t.bigint "perk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_company_perks_on_company_id"
@@ -66,7 +69,9 @@ ActiveRecord::Schema.define(version: 20180220173537) do
     t.string "title"
     t.string "role"
     t.text "description"
-    t.integer "company_id"
+    t.string "requirements"
+    t.string "duties"
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "job_type"
@@ -103,4 +108,11 @@ ActiveRecord::Schema.define(version: 20180220173537) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applicants", "jobs"
+  add_foreign_key "companies", "users"
+  add_foreign_key "company_industries", "companies"
+  add_foreign_key "company_industries", "industries"
+  add_foreign_key "company_perks", "companies"
+  add_foreign_key "company_perks", "perks"
+  add_foreign_key "jobs", "companies"
 end
