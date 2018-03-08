@@ -66,6 +66,9 @@ production:
   database: tuma_production
   timeout: 5000
   pool: 5
+  username: keemtaker
+  password: 'password'
+
 
 
 # production:
