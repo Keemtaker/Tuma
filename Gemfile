@@ -9,9 +9,8 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails_admin', '~> 1.2'
-group :production do
- gem 'pg', '~> 0.20'
-end
+gem 'pg'
+
 
 
 
@@ -35,7 +34,7 @@ gem "letter_opener", group: :development
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :development, :test do
