@@ -20,5 +20,9 @@ end
    resources :jobs, only: [:show, :new, :create, :update, :destroy]
   end
 
+  get 'new', to: "jobs#new"
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
