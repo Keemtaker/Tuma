@@ -2,6 +2,7 @@
 <div class="container">
   <h2 class=style-section>Job Basics</h2>
   <div class="main-body">
+    <% if current_user %>
     <%= simple_form_for @job, :url => company_jobs_path(@company, @job), :method => :post, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
 
    <div class="form-group">
@@ -79,4 +80,16 @@
 </div>
 </div>
 </div>
+
+    <% else %>
+    <%= simple_form_for @job, :method => :post, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
+      <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :email, :label => "Recruiter Email" %>
+    </div>
+  </div>
+<% end %>
+    <% end %>
+
 

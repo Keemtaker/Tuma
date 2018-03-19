@@ -1,4 +1,6 @@
 <% @jobs.each do |job| %>
+<% if job.company %>
+
 <div class="job-bar">
   <div class="logo">
   <%= link_to company_path(job.company) do %>
@@ -16,4 +18,12 @@
     </div>
   </div>
 </div>
+<% else %>
+  <%= job.title %>
+  <%= job.unregistered_company_name %>
+
 <% end %>
+<% end %>
+
+
+
