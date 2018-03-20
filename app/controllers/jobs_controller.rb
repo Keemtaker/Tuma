@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    skip_before_action :authenticate_user!, only: [:index, :show, :new]
+    skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   def index
     @search = Job.ransack(params[:q])
@@ -9,27 +9,30 @@ class JobsController < ApplicationController
 
   def new
     if current_user
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.new
-     else
+      @company = Company.find(params[:company_id])
+      @job = @company.jobs.new
+    else
       @job = Job.new
     end
   end
 
   def create
     if current_user
-    @job = Job.new(job_params)
-    @company =  params[:company_id]
-    @job.company_id = @company
-    if @job.save
-      redirect_to company_job_path(@company, @job)
+      @job = Job.new(job_params)
+      @company =  params[:company_id]
+      @job.company_id = @company
+        if @job.save
+          redirect_to company_job_path(@company, @job)
+        else
+          render :new
+        end
     else
-      render :new
+    #   @job = Job.new(job_params)
+    #   @job.save
+    # end
+
+      quick_job
     end
-  else
-    @job = Job.new(job_params)
-    @job.save
-  end
   end
 
 
@@ -39,6 +42,12 @@ class JobsController < ApplicationController
 
   def quick_job
     @job = Job.new(job_params)
+    @job.save
+      if @job.save
+        redirect_to jobs_path
+      else
+        render :new
+      end
   end
 
   private

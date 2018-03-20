@@ -241,6 +241,14 @@ and (min-device-width : 768px) {
 }
 
 @media only screen
+and (min-device-width : 768px) {
+  #job_unregistered_company_logo {
+    margin-left: 70px;
+    display: inline-flex;
+  }
+}
+
+@media only screen
 and (max-device-width : 667px) {
   label {
     word-break: break-word;
