@@ -1,0 +1,83 @@
+<%= simple_form_for @job, :method => :post, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :unregistered_company_name, :label => "Company name" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :title, :label => "Job title" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :job_type, collection: ["Full-time", "Part-time", "Internship", "Student", "Co-founder", "Freelance"], :label => "Job Type" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :description, as: :text, :label => "Job Description", as: :trix_editor %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :role, collection: ["Fullstack Developer", "Backend Developer", "Frontend Developer", "Engineer", "IOS Developer", "Android Developer", "Designer", "Business Developer", "Data Science", "Customer Service", "Project Management", "Sales", "Marketing", "Consulting", "Other"], :label => "Role" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :email, :label => "Recruiter Email" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :salary, collection: ["Paid", "Unpaid", "Commission"], :label => "Salary" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :location, :label => "Location" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :keywords, :label => "Job Keywords" %>
+    </div>
+  </div>
+
+  <div class="form-group upload-margin">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :unregistered_company_logo, :label => "Company Logo" %>
+      <%= f.input :unregistered_company_logo_cache, as: :hidden %>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.submit 'Post Job', class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+    </div>
+  </div>
+
+
+
+<% end %>

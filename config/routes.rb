@@ -20,6 +20,7 @@ end
    resources :jobs, only: [:show, :new, :create, :update, :destroy]
   end
 
+  #for quick jobs
   get 'new', to: "jobs#new"
 
 
