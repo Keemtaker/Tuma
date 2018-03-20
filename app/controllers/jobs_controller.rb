@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    skip_before_action :authenticate_user!, only: [:index, :show, :new]
+    skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   def index
     @search = Job.ransack(params[:q])
@@ -27,8 +27,11 @@ class JobsController < ApplicationController
           render :new
         end
     else
-      @job = Job.new(job_params)
-      @job.save
+    #   @job = Job.new(job_params)
+    #   @job.save
+    # end
+
+      quick_job
     end
   end
 
@@ -39,6 +42,12 @@ class JobsController < ApplicationController
 
   def quick_job
     @job = Job.new(job_params)
+    @job.save
+      if @job.save
+        redirect_to jobs_path
+      else
+        render :new
+      end
   end
 
   private
