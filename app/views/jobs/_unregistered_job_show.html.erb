@@ -1,0 +1,63 @@
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
+    <div class="job-card">
+      <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
+      <h3><%= @job.unregistered_company_name %></h3>
+      <h1><%= @job.title %></h1>
+      <div class="show-right">
+        <h4><%= @job.salary %></h4>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="padding: 20px; background-color: white;" class="apply-box text-center">
+    <%= link_to "Apply", new_job_applicant_path(@job), remote: true, class: "btn btn-success btn-lg" %>
+  </div>
+
+  <div class="container">
+    <div class="row pitch-box">
+      <div style="margin-bottom:10px;" class="col-md-6">
+       <%= sanitize @job.pitch %> <br />
+        <br />
+      <%= link_to "see more about #{@job.unregistered_company_name}", :class=>"btn btn-primary" %>
+     </div>
+
+
+     <div class="col-md-5 col-md-offset-1 summary-box">
+      <% if @job.location %>
+       <div class="location">
+        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @job.location %>
+      </div>
+      <% end %>
+      <% if @job.job_type %>
+      <div style="margin-top: 10px;">
+        <i class="fa fa-clock-o" aria-hidden="true"></i> <%= @job.job_type %>
+      </div>
+      <% end %>
+      <% if @job.role %>
+      <div style="margin-top: 10px;">
+        <i class="fa fa-black-tie" aria-hidden="true"></i> <%= @job.role %>
+      </div>
+      <% end %>
+      <% if @job.keywords %>
+      <div style="margin-top:10px;" class="keywords">
+        <i class="fa fa-key" aria-hidden="true"></i> <%= @job.keywords %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="row job-long-text">
+    <div class="col-md-10">
+      <%= sanitize @job.description %>
+    </div>
+  </div>
+
+
+  <div class="col-md-4 col-sm-offset-4">
+    <%= link_to "Apply", new_job_applicant_path(@job), remote: true,  class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+  </div>
+
+</div>
+
