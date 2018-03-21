@@ -39,6 +39,29 @@
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
+      <%= f.input :job_application_type, collection: ["Fullstack Developer", "Backend Developer", "Frontend Developer", "Engineer", "IOS Developer", "Android Developer", "Designer", "Business Developer", "Data Science", "Customer Service", "Project Management", "Sales", "Marketing", "Consulting", "Other"], :label => "Role" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%=  f.input :job_application_type,
+          :collection => [['0', 'Apply by email'], ['1', 'Apply by url']],
+          :label_method => :last,
+          :value_method => :first,
+          :as => :radio_buttons,
+          :item_wrapper_class => 'inline',
+          :checked => '0',
+          :label => "Apply"
+ %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
       <%= f.input :email, :label => "Recruiter Email" %>
     </div>
   </div>
