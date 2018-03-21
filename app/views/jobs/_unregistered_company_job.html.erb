@@ -71,6 +71,70 @@
       <%= f.input :unregistered_company_logo_cache, as: :hidden %>
   </div>
 
+
+    <h2 class="style-section perk-margin">Perks & Benefits</h2>
+  <p1>Select perks and benefits that your company offers to employees</p1>
+  <div class="form-group flex-form upload-margin">
+    <div class="col-md-9">
+      <div class="category-choices">
+        <% Perk.all.each do |perk| %>
+        <input type="checkbox", class="hidden" value="<%= perk.id %>" name="job[perk_ids][]" id="job_perk_ids_<%= perk.id %>"/>
+        <label class="category-choice" for="job_perk_ids_<%= perk.id %>">
+         <% case perk.name %>
+         <% when "Friday Bars" %>
+         <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Lunch" %>
+         <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Skill Development" %>
+         <i class="fa fa-star-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Coffee" %>
+         <i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Health Insurance" %>
+         <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Games & Hangouts" %>
+         <i class="fa fa-gamepad fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Occasional Remote Work" %>
+         <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Paid Vacation" %>
+         <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Equity & Stock Options" %>
+         <i class="fa fa-money fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Company Retreats" %>
+         <i class="fa fa-sun-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Maternity & Paternity Leave" %>
+         <i class="fa fa-child fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pension Plan" %>
+         <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Career Progression" %>
+         <i class="fa fa-black-tie fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Flexible Work Hours" %>
+         <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pet Friendly Office" %>
+         <i class="fa fa-paw fa-3x" aria-hidden="true"></i>
+         <br>
+         <% end %>
+         <%= perk.name %>
+       </label>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
+
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">

@@ -54,6 +54,68 @@
     </div>
   </div>
 
+    <h2 class=style-section>Perks & Benefits</h2>
+
+  <div class="flex-form">
+    <div class="col-md-12">
+      <div class="category-choices">
+        <% @job.perks.each do |perk| %>
+        <div class="category-choice">
+         <% case perk.name %>
+         <% when "Friday Bars" %>
+         <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Lunch" %>
+         <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Skill Development" %>
+         <i class="fa fa-star-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Coffee" %>
+         <i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Health Insurance" %>
+         <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Games & Hangouts" %>
+         <i class="fa fa-gamepad fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Occasional Remote Work" %>
+         <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Paid Vacation" %>
+         <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Equity & Stock Options" %>
+         <i class="fa fa-money fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Company Retreats" %>
+         <i class="fa fa-sun-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Maternity & Paternity Leave" %>
+         <i class="fa fa-child fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pension Plan" %>
+         <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Career Progression" %>
+         <i class="fa fa-black-tie fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Flexible Work Hours" %>
+         <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pet Friendly Office" %>
+         <i class="fa fa-paw fa-3x" aria-hidden="true"></i>
+         <br>
+         <% end %>
+         <%= perk.name %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
+
 
   <div class="col-md-4 col-sm-offset-4">
     <%= link_to "Apply", new_job_applicant_path(@job), remote: true,  class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
