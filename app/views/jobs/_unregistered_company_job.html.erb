@@ -69,7 +69,21 @@
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-      <%= f.input :job_application_type, as: :radio_buttons, collection: [['email', 'Apply Email'], ['url', 'Apply url']],  :label => "How to apply" %>
+      <%= f.input :job_application_type, as: :radio_buttons, collection: [['Apply By Email', 'Email'], ['Apply By Url', 'Url']], :label => "How to apply" %>
+    </div>
+  </div>
+
+  <div class="form-group show-job-email" style="display:none">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :job_email, :label => "Job Email" %>
+    </div>
+  </div>
+
+  <div class="form-group show-job-url" style="display:none">
+    <label class="col-md-1 control-label"></label>
+    <div class="col-md-9">
+      <%= f.input :job_url, :label => "Job Url" %>
     </div>
   </div>
 

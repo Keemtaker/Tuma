@@ -7,6 +7,7 @@
 //= require perk_choice
 //= require search
 //= require checkbox
+//= require radio_button
 
 //= require_tree .
 
