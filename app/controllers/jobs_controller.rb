@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def index
     @search = Job.ransack(params[:q])
-    @jobs = @search.result(distinct: true)
+    @jobs = @search.result(distinct: true).order("id DESC")
   end
 
 
@@ -27,10 +27,6 @@ class JobsController < ApplicationController
           render :new
         end
     else
-    #   @job = Job.new(job_params)
-    #   @job.save
-    # end
-
       quick_job
     end
   end
@@ -39,6 +35,7 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
+
 
   def quick_job
     @job = Job.new(job_params)
