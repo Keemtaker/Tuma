@@ -1,5 +1,3 @@
-<!-- This is for registered companies to create jobs  -->
-
 <%= simple_form_for @job, :url => company_jobs_path(@company, @job), :method => :post, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
 
   <div class="form-group">
@@ -70,7 +68,6 @@
     <div class="col-md-9">
       <%= f.button :submit , name: "previewButt", value: "Preview" %>
       <%= f.button :submit , name: "createButt", value: "Post it!" %>
-      <%= f.button :submit , name: "backButt", value: "Make changes" %>
     </div>
   </div>
 

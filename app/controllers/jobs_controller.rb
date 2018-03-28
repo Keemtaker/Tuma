@@ -41,7 +41,7 @@ class JobsController < ApplicationController
       elsif params[:createButt] == "Post it!"
         @job.save
         redirect_to company_job_path(@company, @job)
-      elsif params[:backButt] == "Make changes"
+      else
         render :new
       end
   end
@@ -53,7 +53,7 @@ class JobsController < ApplicationController
       elsif params[:createButt] == "Post it!"
         @job.save
         redirect_to root_path
-      elsif params[:backButt] == "Make changes"
+      else
         render :new
       end
   end
