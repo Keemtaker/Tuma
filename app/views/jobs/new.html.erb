@@ -3,9 +3,9 @@
     <h2 class=style-section>Job Basics</h2>
     <div class="main-body">
       <% if current_user %>
-        <%= render 'registered_company_job' %>
+        <%= render 'jobs/apply/registered_job' %>
       <% else %>
-        <%= render 'unregistered_company_job' %>
+        <%= render 'jobs/apply/quick_job' %>
       <% end %>
     </div>
   </div>
