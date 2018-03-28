@@ -68,7 +68,9 @@
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
-      <%= f.submit 'Post Job', class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+      <%= f.button :submit , name: "previewButt", value: "Preview" %>
+      <%= f.button :submit , name: "createButt", value: "Post it!" %>
+      <%= f.button :submit , name: "backButt", value: "Make changes" %>
     </div>
   </div>
 

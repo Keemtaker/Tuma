@@ -11,10 +11,6 @@ end
       resources :applicants, only: [:show, :new, :create]
       get 'applicants/:id/dashboard', to: "companies#dashboard", on: :member
     end
-        #get 'applicant_id/dashboard', to: 'companies#dashboard', on: :member
-
-  get 'dashboard', to: "companies#dashboard"
-
 
   resources :companies do
    resources :jobs, only: [:show, :new, :create, :update, :destroy]

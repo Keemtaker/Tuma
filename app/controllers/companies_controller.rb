@@ -12,23 +12,25 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user = current_user
-      if @company.save
-        redirect_to @company
-      else
-        render :new
-    end
+      preview_company
   end
 
   def show
      @company = Company.find(params[:id])
   end
 
-  def dashboard
-    @dashboards = Applicant.all
-  end
-
-
 private
+
+  def preview_company
+    if params[:previewButt] == "Preview"
+      render :create
+    elsif params[:createButt] == "Post it!"
+      @company.save
+      redirect_to @company
+    else
+      render :new
+    end
+  end
 
   def company_params
     params.require(:company).permit(:name, :description, :website, :location, :user_id, :photo, :logo, perk_ids:[], industry_ids:[])

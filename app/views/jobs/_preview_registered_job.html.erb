@@ -1,0 +1,115 @@
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @job.company.photo %>');">
+    <div class="job-card">
+      <%= link_to company_path(@job.company) do %>
+      <%= image_tag @job.company.logo, class: "show-logo" %>
+      <h3><%= @job.company.name %></h3>
+      <% end %>
+      <h1><%= @job.title %></h1>
+      <div class="show-right">
+        <h4><%= @job.salary %></h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row pitch-box">
+      <div style="margin-bottom:10px;" class="col-md-6">
+       <%= sanitize @job.pitch %> <br />
+        <br />
+      <%= link_to "see more about #{@job.company.name}", company_path(@job.company), :class=>"btn btn-primary" %>
+     </div>
+
+
+     <div class="col-md-5 col-md-offset-1 summary-box">
+      <% if @job.location %>
+       <div class="location">
+        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @job.location %>
+      </div>
+      <% end %>
+      <% if @job.job_type %>
+      <div style="margin-top: 10px;">
+        <i class="fa fa-clock-o" aria-hidden="true"></i> <%= @job.job_type %>
+      </div>
+      <% end %>
+      <% if @job.role %>
+      <div style="margin-top: 10px;">
+        <i class="fa fa-black-tie" aria-hidden="true"></i> <%= @job.role %>
+      </div>
+      <% end %>
+      <% if @job.keywords %>
+      <div style="margin-top:10px;" class="keywords">
+        <i class="fa fa-key" aria-hidden="true"></i> <%= @job.keywords %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="row job-long-text">
+    <div class="col-md-10">
+      <%= sanitize @job.description %>
+    </div>
+  </div>
+
+  <h2 class=style-section>Perks & Benefits</h2>
+
+  <div class="flex-form">
+    <div class="col-md-12">
+      <div class="category-choices">
+        <% @job.company.perks.each do |perk| %>
+        <div class="category-choice">
+         <% case perk.name %>
+         <% when "Friday Bars" %>
+         <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Lunch" %>
+         <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Skill Development" %>
+         <i class="fa fa-star-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Free Coffee" %>
+         <i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Health Insurance" %>
+         <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Games & Hangouts" %>
+         <i class="fa fa-gamepad fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Occasional Remote Work" %>
+         <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Paid Vacation" %>
+         <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Equity & Stock Options" %>
+         <i class="fa fa-money fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Company Retreats" %>
+         <i class="fa fa-sun-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Maternity & Paternity Leave" %>
+         <i class="fa fa-child fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pension Plan" %>
+         <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Career Progression" %>
+         <i class="fa fa-black-tie fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Flexible Work Hours" %>
+         <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+         <br>
+         <% when "Pet Friendly Office" %>
+         <i class="fa fa-paw fa-3x" aria-hidden="true"></i>
+         <br>
+         <% end %>
+         <%= perk.name %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
+</div>
