@@ -37,8 +37,9 @@ class JobsController < ApplicationController
     @company =  params[:company_id]
     @job.company_id = @company
       if params[:previewButt] == "Preview"
+        flash[:alert] = "This is a PREVIEW of your job posting. Go back to the previous tab to Post the job or make edits."
         render :create
-      elsif params[:createButt] == "Post it!"
+      elsif params[:createButt] == "Post Job"
         @job.save
         redirect_to company_job_path(@company, @job)
       else
@@ -49,8 +50,10 @@ class JobsController < ApplicationController
   def quick_job
     @job = Job.new(job_params)
       if params[:previewButt] == "Preview"
+        flash[:alert] = "This is a PREVIEW of your job posting. Go back to the previous tab to Post the job or make edits."
         render :create
-      elsif params[:createButt] == "Post it!"
+      elsif
+        params[:createButt] == "Post Job"
         @job.save
         redirect_to root_path
       else
