@@ -23,8 +23,9 @@ private
 
   def preview_company
     if params[:previewButt] == "Preview"
+      flash[:alert] = "This is a PREVIEW of your company profile. Go back to the previous tab to Submit or make edits."
       render :create
-    elsif params[:createButt] == "Post it!"
+    elsif params[:createButt] == "Submit"
       @company.save
       redirect_to @company
     else
