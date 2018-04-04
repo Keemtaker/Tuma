@@ -61,14 +61,14 @@
  <h2 class="style-section">Image Upload</h2>
  <p1>In this section, you essentially display your company's swagger.<br />
  Upload your company's best images and make it look smashing</p1>
-<div class="form-group upload-margin">
+<div class="form-group upload-margin label-adjust">
   <label class="col-md-1 control-label"></label>
   <div class="col-md-9">
     <%= f.input :logo, :label => "Company Logo" %>
     <%= f.input :logo_cache, as: :hidden %>
   </div>
 </div>
- <div class="form-group">
+ <div class="form-group label-adjust">
   <label class="col-md-1 control-label"></label>
   <div class="col-md-9">
     <%= f.input :photo, :label => "Cover Image", wrapper_html: { class: 'photo-style' }  %>
