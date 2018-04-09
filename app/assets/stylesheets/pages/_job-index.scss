@@ -79,3 +79,10 @@ a {
 a:hover {
   color: gray;
 }
+
+@media only screen
+and (max-device-width : 667px) {
+  .jobs_search {
+    margin-top: 10px;
+  }
+}
