@@ -16,10 +16,14 @@
           <% end %>
 
           <% new_roles.uniq.each do |new_role| %>
-            <li>
-              <%= check_box_tag('q[role_eq_any][]', new_role) %>
-              <%= new_role %>
-            </li>
+            <a>
+              <label>
+                <li>
+                  <%= check_box_tag('q[role_eq_any][]', new_role) %>
+                  <%= new_role %>
+                </li>
+              </label>
+             </a>
           <% end %>
           <% end %>
         </div>
@@ -42,10 +46,14 @@
           <% end %>
 
           <% new_roles.uniq.each do |new_role| %>
-            <li>
-              <%= check_box_tag('q[job_type_eq_any][]', new_role) %>
-              <%= new_role %>
-            </li>
+            <a>
+              <label>
+                <li>
+                  <%= check_box_tag('q[job_type_eq_any][]', new_role) %>
+                  <%= new_role %>
+                </li>
+              </label>
+            </a>
           <% end %>
           <% end %>
         </div>
@@ -57,7 +65,7 @@
     <div class="dropdown">
       <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Types
       <span class="caret"></span></button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu dropdown-menu-right">
         <div class="filter-style">
           <% new_roles = [] %>
           <%= search_form_for @search, :class => 'filters_click' do |f| %>
@@ -68,18 +76,20 @@
           <% end %>
 
           <% new_roles.uniq.each do |new_role| %>
-            <li>
-              <%= check_box_tag('q[salary_eq_any][]', new_role) %>
-              <%= new_role %>
-            </li>
+            <a>
+              <label>
+                <li>
+                  <%= check_box_tag('q[salary_eq_any][]', new_role) %>
+                  <%= new_role %>
+                </li>
+              </label>
+            </a>
           <% end %>
           <% end %>
         </div>
       </ul>
     </div>
   </div>
-
-
 
 </div>
 </div>
