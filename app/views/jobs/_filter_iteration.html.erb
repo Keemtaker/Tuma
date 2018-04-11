@@ -10,8 +10,12 @@
 
       <% new_roles.uniq.each do |new_role| %>
       <div class="styled-input-container">
-        <%= check_box_tag('q[role_eq_any][]', new_role) %>
-        <%= new_role %>
+        <a>
+          <label>
+            <%= check_box_tag('q[role_eq_any][]', new_role) %>
+              <%= new_role %>
+          </label>
+        </a>
       </div>
       <% end %>
       <% end %>
@@ -29,8 +33,12 @@
 
       <% new_roles.uniq.each do |new_role| %>
       <div class="styled-input-container">
+        <a>
+          <label>
         <%= check_box_tag('q[job_type_eq_any][]', new_role) %>
         <%= new_role %>
+          </label>
+       </a>
       </div>
       <% end %>
       <% end %>
@@ -49,8 +57,12 @@
 
       <% new_roles.uniq.each do |new_role| %>
       <div class="styled-input-container">
+        <a>
+        <label>
         <%= check_box_tag('q[salary_eq_any][]', new_role) %>
         <%= new_role %>
+        </label>
+       </a>
       </div>
       <% end %>
       <% end %>
