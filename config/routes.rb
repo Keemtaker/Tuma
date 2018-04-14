@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
 
   resources :companies do
-   resources :jobs, only: [:show, :new, :create, :update, :destroy]
+   resources :jobs
   end
 
   #for quick jobs

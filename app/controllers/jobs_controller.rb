@@ -28,6 +28,28 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def edit
+    if current_user
+      @company = Company.find(params[:company_id])
+      @job = Job.find(params[:id])
+    end
+  end
+
+  def update
+    edit
+    @company =  params[:company_id]
+    @job.company_id = @company
+    @job.update(job_params)
+      if @job.update(job_params)
+        flash[:notice] = "Job details successfully updated."
+        redirect_to company_job_path(@company, @job)
+      else
+        render :edit
+      end
+  end
+
+
+
 
 
   private
