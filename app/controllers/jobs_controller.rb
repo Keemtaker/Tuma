@@ -28,7 +28,31 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def edit
+    if current_user
+      @company = Company.find(params[:company_id])
+      @job = Job.find(params[:id])
+    end
+  end
 
+  def update
+    edit
+    @company = params[:company_id]
+    @job.company_id = @company
+    @job.update(job_params)
+      if @job.update(job_params)
+        flash[:notice] = "Job details successfully updated."
+        redirect_to company_job_path(@company, @job)
+      else
+        render :edit
+      end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
+  end
 
   private
 
@@ -41,6 +65,7 @@ class JobsController < ApplicationController
         render :create
       elsif params[:createButt] == "Post Job"
         @job.save
+        flash[:notice] = "Success!"
         redirect_to company_job_path(@company, @job)
       else
         render :new
@@ -55,7 +80,8 @@ class JobsController < ApplicationController
       elsif
         params[:createButt] == "Post Job"
         @job.save
-        redirect_to root_path
+        flash[:notice] = "Success!"
+        redirect_to @job
       else
         render :new
       end

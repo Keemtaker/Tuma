@@ -19,6 +19,22 @@ class CompaniesController < ApplicationController
      @company = Company.find(params[:id])
   end
 
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    edit
+    @company.update(company_params)
+    if @company.update(company_params)
+      flash[:notice] = "Company profile successfully updated."
+      redirect_to @company
+    else
+      render :edit
+    end
+  end
+
+
 private
 
   def preview_company
@@ -27,6 +43,7 @@ private
       render :create
     elsif params[:createButt] == "Submit"
       @company.save
+      flash[:notice] = "Congrats on creating a company profile."
       redirect_to @company
     else
       render :new

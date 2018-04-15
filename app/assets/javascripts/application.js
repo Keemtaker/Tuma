@@ -3,6 +3,7 @@
 //= require bootstrap-sprockets
 //= require trix
 
+
 //= require industry
 //= require perk_choice
 //= require search

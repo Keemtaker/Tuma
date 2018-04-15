@@ -23,6 +23,7 @@ gem 'simple_form'
 gem 'turbolinks', '~> 5.0.0'
 gem 'coffee-rails'
 
+
 gem 'uglifier'
 gem 'devise'
 gem 'ransack'
