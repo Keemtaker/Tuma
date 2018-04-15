@@ -43,6 +43,7 @@ private
       render :create
     elsif params[:createButt] == "Submit"
       @company.save
+      flash[:notice] = "Congrats on creating a company profile."
       redirect_to @company
     else
       render :new

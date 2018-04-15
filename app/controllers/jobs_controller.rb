@@ -37,7 +37,7 @@ class JobsController < ApplicationController
 
   def update
     edit
-    @company =  params[:company_id]
+    @company = params[:company_id]
     @job.company_id = @company
     @job.update(job_params)
       if @job.update(job_params)
@@ -47,10 +47,6 @@ class JobsController < ApplicationController
         render :edit
       end
   end
-
-
-
-
 
   private
 
@@ -63,6 +59,7 @@ class JobsController < ApplicationController
         render :create
       elsif params[:createButt] == "Post Job"
         @job.save
+        flash[:notice] = "Success!"
         redirect_to company_job_path(@company, @job)
       else
         render :new
@@ -77,7 +74,8 @@ class JobsController < ApplicationController
       elsif
         params[:createButt] == "Post Job"
         @job.save
-        redirect_to root_path
+        flash[:notice] = "Success!"
+        redirect_to @job
       else
         render :new
       end
