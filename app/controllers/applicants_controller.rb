@@ -4,7 +4,6 @@ class ApplicantsController < ApplicationController
   def new
     @job = Job.find(params[:job_id])
     @applicant = @job.applicants.new
-
   end
 
   def create

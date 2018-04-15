@@ -12,7 +12,11 @@
   </div>
 
   <div style="padding: 20px; background-color: white;" class="apply-box text-center">
-    <%= link_to "Apply", new_job_applicant_path(@job), remote: true, class: "btn btn-success btn-lg" %>
+    <% if @job.job_application_type == "Url" %>
+      <%= link_to "Apply", @job.job_url, :target => "_blank", class: "btn btn-success btn-lg" %>
+    <% else %>
+      <%= link_to "Apply", new_job_applicant_path(@job), remote: true, class: "btn btn-success btn-lg" %>
+    <%end  %>
   </div>
 
   <div class="container">
@@ -27,7 +31,6 @@
         <br />
       <%= link_to "see more about #{@job.company.name}", company_path(@job.company), :class=>"btn btn-primary" %>
      </div>
-
 
      <div class="col-md-5 col-md-offset-1 summary-box">
       <% if @job.location %>
@@ -122,7 +125,10 @@
  </div>
 
   <div class="col-md-4 col-sm-offset-4">
-    <%= link_to "Apply", new_job_applicant_path(@job), remote: true,  class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+    <% if @job.job_application_type == "Url" %>
+      <%= link_to "Apply", @job.job_url, :target => "_blank", class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+    <% else %>
+      <%= link_to "Quick Apply", new_job_applicant_path(@job), remote: true,  class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
+    <% end %>
   </div>
-
 </div>
