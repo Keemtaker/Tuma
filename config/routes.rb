@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   end
 
   #for quick jobs
-resources :jobs
+  resources :jobs
+  get 'pricing_page', to: "static_pages#pricing_page"
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
