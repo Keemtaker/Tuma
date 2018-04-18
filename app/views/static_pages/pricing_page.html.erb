@@ -1,0 +1,78 @@
+<div class="container" >
+  <div class="col-md-10 text-center" style="margin-bottom: 15px;">
+    <h3 class="pricing-header">Welcome to the Products page</h3>
+  </div>
+  <div class="col-md-10">
+    <p>Life would be boring without options. Here at Tuma, we recognize that and provide customers with 2 recruitment options.</p>
+    <br>
+    <p>The first product type, <strong>Registered Job</strong> involves creating a <strong>Company Profile/Account</strong> and posting a job. <br /> <%= link_to "Get started", new_user_registration_path, class: "btn btn-success" %></p>
+    <br>
+    <p>If you are pressed for time, our second product type, <strong>Quick Job</strong> is the best option. You can post a job without creating a company profile. <br /> <%= link_to "Get started", new_job_path, class: "btn btn-warning" %> </p>
+  </div>
+  <div class="col-md-10 text-center">
+    <h3 class="pricing-header">Products Table Summary</h3>
+  </div>
+  <div class="col-md-10">
+    <div class="price-table-wrapper">
+      <div class="pricing-table">
+        <h2 class="pricing-table__header">- Registered Job-</h2>
+        <h3 class="pricing-table__price">Free</h3>
+        <%= link_to "Post job now!", new_user_registration_path, class: "pricing-table__button" %>
+        </a>
+        <ul class="pricing-table__list">
+          <li>Job duration: 40 days</li>
+          <li>Signing-up required</li>
+          <li>Can edit job postings</li>
+          <li>24 hour support</li>
+        </ul>
+      </div>
+      <div class="pricing-table">
+        <h2 class="pricing-table__header">- Quick Job -</h2>
+        <h3 class="pricing-table__price">Free</h3>
+        <%= link_to "Post job now!", new_job_path, class: "pricing-table__button" %>
+        <ul class="pricing-table__list">
+          <li>Job duration: 30 days</li>
+          <li>No signing-up</li>
+          <li>Cannot edit job postings</li>
+          <li>24 hour support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10 text-center">
+    <h3 class="pricing-header" style="margin-bottom: 15px;">Common Questions</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>What is the difference between the two options?</h4>
+      <p>Basically, the <strong>Registered Job</strong> option provides you with the opportunity to create a company account before posting a job. This involves signing-up and filling in basic company details. <br /> In contrast, the <strong>Quick Job</strong> option does not require signing up or creating an account. That means, no signing up or sigining in is involved.</p>
+      <br />
+      <h4>Why create a company profile?</h4>
+      <ul class="list">
+        <li>The <strong>Registered Job</strong> option comes with a few added benefits. It gives you the ability to edit your job postings.</li>
+        <li>Your job posting gets an extended duration</li>
+        <li>It saves you time in future job postings since you dont have to fill out company details after creating a company profile</li>
+        <li>It makes your company more visible to applicants</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h4>What do I need to post a job</h4>
+      <p>Seriously, it is ridiculously easy to post a job. You simply fill in a few details about the job posting and you are basically good to go. We do recommnend to upload a company logo and if you want some more swagger, a company cover picture. Good images makes your company look attractive. The company logo and cover picture are optional.
+      <br />
+      <br />
+      <h4>How do I recieve applications</h4>
+      <p>Again, life would be boring without options. So you have the option of accepting applications through an email address that you provide or redirecting applicants to an external application site. Either way, we would work tirelessly to connect you with high quality candidates.
+    </div>
+    <div class="col-md-10">
+    <br />
+      <p>Ok, it is now time to post your job and attract awesome candidates. Dont be shy, go ahead and choose one option</p>
+    </div>
+    <div class="col-md-7" style="margin-bottom: 70px;">
+      <%= link_to "Registered Job", new_user_registration_path, class: "btn btn-success btn-lg" %>
+    </div>
+    <div class="col-md-5">
+      <%= link_to "Quick Job", new_job_path, class: "btn btn-warning btn-lg" %>
+    </div>
+  </div>
+
+</div>
