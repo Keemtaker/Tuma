@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   #for quick jobs
   resources :jobs
   get 'pricing_page', to: "static_pages#pricing_page"
+  get 'about', to: "static_pages#about"
 
 
 
