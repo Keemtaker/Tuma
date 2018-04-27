@@ -1,16 +1,16 @@
 <div class="container" >
   <div class="col-md-10 text-center" style="margin-bottom: 15px;">
-    <h3 class="pricing-header">Welcome to the Products page</h3>
+    <h3 class="general-header">Welcome to the Products page</h3>
   </div>
   <div class="col-md-10">
     <p>Life would be boring without options. Here at Tuma, we recognize that and provide customers with 2 recruitment options.</p>
     <br>
     <p>The first product type, <strong>Registered Job</strong> involves creating a <strong>Company Profile/Account</strong> and posting a job. <br /> <%= link_to "Get started", new_user_registration_path, class: "btn btn-success" %></p>
     <br>
-    <p>If you are pressed for time, our second product type, <strong>Quick Job</strong> is the best option. You can post a job without creating a company profile. <br /> <%= link_to "Get started", new_job_path, class: "btn btn-warning" %> </p>
+    <p>If you are pressed for time, our second product type, <strong>Quick Job</strong> is the best option. You can post a job without creating a company profile. <br /> <%= link_to "Get started", new_job_path, class: "btn btn-success" %> </p>
   </div>
   <div class="col-md-10 text-center">
-    <h3 class="pricing-header">Products Table Summary</h3>
+    <h3 class="general-header">Products Table Summary</h3>
   </div>
   <div class="col-md-10">
     <div class="price-table-wrapper">
@@ -18,7 +18,6 @@
         <h2 class="pricing-table__header">- Registered Job-</h2>
         <h3 class="pricing-table__price">Free</h3>
         <%= link_to "Post job now!", new_user_registration_path, class: "pricing-table__button" %>
-        </a>
         <ul class="pricing-table__list">
           <li>Job duration: 40 days</li>
           <li>Signing-up required</li>
@@ -40,7 +39,7 @@
     </div>
   </div>
   <div class="col-md-10 text-center">
-    <h3 class="pricing-header" style="margin-bottom: 15px;">Common Questions</h3>
+    <h3 class="general-header" style="margin-bottom: 15px;">Common Questions</h3>
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -71,7 +70,7 @@
       <%= link_to "Registered Job", new_user_registration_path, class: "btn btn-success btn-lg" %>
     </div>
     <div class="col-md-5">
-      <%= link_to "Quick Job", new_job_path, class: "btn btn-warning btn-lg" %>
+      <%= link_to "Quick Job", new_job_path, class: "btn btn-success btn-lg" %>
     </div>
   </div>
 
