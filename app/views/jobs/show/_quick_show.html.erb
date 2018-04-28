@@ -1,56 +1,54 @@
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
-    <div class="job-card">
-      <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
-      <h3><%= @job.unregistered_company_name %></h3>
-      <h1><%= @job.title %></h1>
-      <div class="show-right">
-        <h4><%= @job.salary %></h4>
-      </div>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
+  <div class="job-card">
+    <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
+    <h3><%= @job.unregistered_company_name %></h3>
+    <h1><%= @job.title %></h1>
+    <div class="show-right">
+      <h4><%= @job.salary %></h4>
     </div>
   </div>
+</div>
 
 
-  <div style="padding: 20px; background-color: white;" class="apply-box text-center">
-    <% if @job.job_application_type == "Url" %>
-      <%= link_to "Apply", @job.job_url, :target => "_blank", class: "btn btn-success btn-lg" %>
-    <% else %>
-      <%= link_to "Quick Apply", new_job_applicant_path(@job), remote: true, class: "btn btn-success btn-lg" %>
-    <% end %>
-  </div>
+<div style="padding: 20px; background-color: white;" class="apply-box text-center">
+  <% if @job.job_application_type == "Url" %>
+    <%= link_to "Apply", @job.job_url, :target => "_blank", class: "btn btn-success btn-lg" %>
+  <% else %>
+    <%= link_to "Quick Apply", new_job_applicant_path(@job), remote: true, class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
 
-  <div class="container">
-    <div class="row pitch-box">
-      <div style="margin-bottom:10px;" class="col-md-6">
-       <%= sanitize @job.pitch %> <br />
-        <br />
+<div class="container">
+  <div class="row pitch-box">
+    <div style="margin-bottom:10px;" class="col-md-6">
+      <%= sanitize @job.pitch %> <br />
+      <br />
       <%= link_to "see more about #{@job.unregistered_company_name}", :class=>"btn btn-primary" %>
-     </div>
+    </div>
 
-
-     <div class="col-md-5 col-md-offset-1 summary-box">
+    <div class="col-md-5 col-md-offset-1 summary-box">
       <% if @job.location %>
-       <div class="location">
-        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @job.location %>
-      </div>
+        <div class="location">
+          <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @job.location %>
+        </div>
       <% end %>
       <% if @job.job_type %>
-      <div style="margin-top: 10px;">
-        <i class="fa fa-clock-o" aria-hidden="true"></i> <%= @job.job_type %>
-      </div>
+        <div style="margin-top: 10px;">
+          <i class="fa fa-clock-o" aria-hidden="true"></i> <%= @job.job_type %>
+        </div>
       <% end %>
       <% if @job.role %>
-      <div style="margin-top: 10px;">
-        <i class="fa fa-black-tie" aria-hidden="true"></i> <%= @job.role %>
-      </div>
+        <div style="margin-top: 10px;">
+          <i class="fa fa-black-tie" aria-hidden="true"></i> <%= @job.role %>
+        </div>
       <% end %>
       <% if @job.keywords %>
-      <div style="margin-top:10px;" class="keywords">
-        <i class="fa fa-key" aria-hidden="true"></i> <%= @job.keywords %>
-      </div>
+        <div style="margin-top:10px;" class="keywords">
+          <i class="fa fa-key" aria-hidden="true"></i> <%= @job.keywords %>
+        </div>
       <% end %>
-    </div>
   </div>
-
+</div>
 
   <div class="row job-long-text">
     <div class="col-md-10">
@@ -58,8 +56,7 @@
     </div>
   </div>
 
-    <h2 class=style-section>Perks & Benefits</h2>
-
+  <h2 class=style-section>Perks & Benefits</h2>
   <div class="flex-form">
     <div class="col-md-12">
       <div class="category-choices">
@@ -113,13 +110,11 @@
          <br>
          <% end %>
          <%= perk.name %>
-       </div>
+        </div>
        <% end %>
-     </div>
-   </div>
- </div>
-
-
+      </div>
+    </div>
+  </div>
 
   <div class="col-md-4 col-sm-offset-4">
     <% if @job.job_application_type == "Url" %>
@@ -128,6 +123,5 @@
       <%= link_to "Quick Apply", new_job_applicant_path(@job), remote: true,  class: "btn btn-success btn-lg btn-block upload-margin create-style"%>
     <% end %>
   </div>
-
 </div>
 
