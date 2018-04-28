@@ -1,17 +1,17 @@
- <div class="container">
+<div class="container">
   <div class="row">
     <% @companies.each do |company| %>
-    <div class="col-md-4">
-      <%= link_to company_path(company) do %>
-      <div class="company-card-index" style=" margin-bottom: 30px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path company.photo %>');">
-        <div class="job-card">
-          <%= image_tag company.logo, class: "show-logo" %>
-          <h3><%= company.name %></h3>
-          <h5 style="color: #5DB1D1";><%= company.location %></h5>
-        </div>
+      <div class="col-md-4">
+        <%= link_to company_path(company) do %>
+          <div class="company-card-index" style=" margin-bottom: 30px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path company.photo %>');">
+            <div class="job-card">
+              <%= image_tag company.logo, class: "show-logo" %>
+              <h3><%= company.name %></h3>
+              <h5 style="color: #5DB1D1";><%= company.location %></h5>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
     <% end %>
   </div>
 </div>

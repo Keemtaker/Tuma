@@ -1,6 +1,6 @@
 <div class="col-md-3">
   <%= search_form_for @search, :class => 'jobs_search' do |f| %>
-  <%= f.search_field :salary_or_job_type_or_title_cont, placeholder: "search" %>
+    <%= f.search_field :salary_or_job_type_or_title_cont, placeholder: "search" %>
   <% end %>
 
   <div class="hidden-xs">
@@ -8,7 +8,4 @@
   </div>
 
   <%= render 'filter_iteration_mobile' %>
-
-
-
 </div>

@@ -5,20 +5,19 @@
         <%= link_to company_job_path(job.company, job) do %>
           <%= image_tag job.company.logo, class: "company-logo" %>
       </div>
-    <div class="text">
-      <div class="job-title">
-        <%= job.title %>
-      </div><span class="company-name"><%= job.company.name %></span>
-    </div>
-       <% end %>
+          <div class="text">
+            <div class="job-title">
+              <%= job.title %>
+            </div><span class="company-name"><%= job.company.name %></span>
+           </div>
+        <% end %>
 
-    <div class="details hidden-xs">
-      <div class="job-description">
-        <%= job.job_type %><br><%= job.salary %>
+      <div class="details hidden-xs">
+        <div class="job-description">
+          <%= job.job_type %><br><%= job.salary %>
+        </div>
       </div>
     </div>
-    </div>
-
   <% else %>
 
     <div class="job-bar">
@@ -27,20 +26,19 @@
           <%= image_tag job.unregistered_company_logo, class: "company-logo" %>
       </div>
 
-      <div class="text">
-        <div class="job-title">
-        <%= job.title %>
-      </div><span class="company-name"><%= job.unregistered_company_name %></span>
-    </div>
+          <div class="text">
+            <div class="job-title">
+              <%= job.title %>
+            </div><span class="company-name"><%= job.unregistered_company_name %></span>
+          </div>
         <% end %>
 
       <div class="details hidden-xs">
         <div class="job-description">
-        <%= job.job_type %><br><%= job.salary %>
+          <%= job.job_type %><br><%= job.salary %>
+        </div>
       </div>
     </div>
-    </div>
-
   <% end %>
 <% end %>
 

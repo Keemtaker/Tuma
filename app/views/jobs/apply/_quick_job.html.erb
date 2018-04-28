@@ -36,8 +36,6 @@
     </div>
   </div>
 
-
-
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9">
@@ -92,10 +90,11 @@
     <div class="col-md-9">
       <%= f.input :unregistered_company_logo, :label => "Company Logo" %>
       <%= f.input :unregistered_company_logo_cache, as: :hidden %>
+    </div>
   </div>
 
 
-    <h2 class="style-section perk-margin">Perks & Benefits</h2>
+  <h2 class="style-section perk-margin">Perks & Benefits</h2>
   <p1>Select perks and benefits that your company offers to employees</p1>
   <div class="form-group flex-form upload-margin">
     <div class="col-md-9">
@@ -151,19 +150,17 @@
          <br>
          <% end %>
          <%= perk.name %>
-       </label>
-       <% end %>
-     </div>
-   </div>
- </div>
+        </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <div class="form-group">
     <label class="col-md-1 control-label"></label>
     <div class="col-md-9 text-center" style="margin-top: 110px;">
-      <%= f.button :submit , name: "previewButt", value: "Preview", formtarget:"_blank", data: { disable_with: false }
- %>
-      <%= f.button :submit , name: "createButt", value: "Post Job", class: "btn btn-success post-btn", data: { disable_with: false }
- %>
+      <%= f.button :submit , name: "previewButt", value: "Preview", formtarget:"_blank", data: { disable_with: false } %>
+      <%= f.button :submit , name: "createButt", value: "Post Job", class: "btn btn-success post-btn", data: { disable_with: false } %>
     </div>
     <div class="col-md-9" style="margin-top: 80px;">
       <p style="color: gray;">Click <strong>Preview</strong> to see how your job posting would appear to applicants. The preview would open in a new tab. Return back to this page to <strong>Post job</strong> or make <strong>Edits</strong>.</p>
