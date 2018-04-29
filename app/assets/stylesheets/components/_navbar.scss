@@ -32,7 +32,6 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar link */
@@ -79,10 +78,14 @@
 
 .nav-center {
   text-align: center;
-  flex: 1 0 50%; /* or whatever width you want. */
-  word-spacing: 40px;
+  flex: 0.4 0 50%; /* or whatever width you want. */
+  word-spacing: 40px
 }
 
 .line-hiring {
   color: blue;
+}
+
+.job-button {
+  margin-left: 40px;
 }
