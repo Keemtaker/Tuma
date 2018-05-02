@@ -5,4 +5,5 @@ class Job < ApplicationRecord
   has_many :perks, through: :job_perks, dependent: :destroy
 
   mount_uploader :unregistered_company_logo, LogoUploader
+  mount_uploader :unregistered_company_photo, LogoUploader
 end
