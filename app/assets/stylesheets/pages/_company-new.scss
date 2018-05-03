@@ -246,9 +246,48 @@ and (min-device-width : 768px) {
 @media only screen
 and (min-device-width : 768px) {
   #job_unregistered_company_logo {
+    margin-left: 80px;
+    display: inline-flex;
+  }
+}
+@media only screen
+and (min-device-width : 768px) {
+  #company_photo {
     margin-left: 70px;
     display: inline-flex;
   }
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  #job_unregistered_company_photo {
+    margin-left: 70px;
+    display: inline-flex;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  #applicant_resume {
+    margin-left: 100px;
+    display: inline-flex;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  #applicant_cover_letter {
+    margin-left: 70px;
+    display: inline-flex;
+  }
+}
+
+.applicant_resume {
+  margin-top: 40px;
+}
+
+.applicant_cover_letter {
+  margin-top: 40px;
 }
 
 @media only screen
