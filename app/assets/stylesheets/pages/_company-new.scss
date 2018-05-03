@@ -267,6 +267,30 @@ and (min-device-width : 768px) {
 }
 
 @media only screen
+and (min-device-width : 768px) {
+  #applicant_resume {
+    margin-left: 100px;
+    display: inline-flex;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px) {
+  #applicant_cover_letter {
+    margin-left: 70px;
+    display: inline-flex;
+  }
+}
+
+.applicant_resume {
+  margin-top: 40px;
+}
+
+.applicant_cover_letter {
+  margin-top: 40px;
+}
+
+@media only screen
 and (max-device-width : 667px) {
   label {
     word-break: break-word;
