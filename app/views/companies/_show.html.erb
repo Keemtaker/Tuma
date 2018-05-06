@@ -1,11 +1,22 @@
-<div class="card" style="height: 500px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @company.photo %>');">
-  <div class="job-card">
-    <%= image_tag @company.logo, class: "show-logo" %>
-    <h1><%= @company.name %></h1>
-    <h3 style="color: #5DB1D1";><%= @company.location %></h3>
-    <h3><%= @company.address %></h3>
+<% if @company.photo? %>
+  <div class="card" style="height: 500px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @company.photo %>');">
+    <div class="job-card">
+      <%= image_tag @company.logo, class: "show-logo" %>
+      <h1><%= @company.name %></h1>
+      <h3 style="color: #5DB1D1";><%= @company.location %></h3>
+      <h3><%= @company.address %></h3>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="card" style="height: 500px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
+    <div class="job-card">
+      <%= image_tag @company.logo, class: "show-logo" %>
+      <h1><%= @company.name %></h1>
+      <h3 style="color: #5DB1D1";><%= @company.location %></h3>
+      <h3><%= @company.address %></h3>
+    </div>
+  </div>
+<% end %>
 
 <% if current_user %>
   <div style="padding: 20px; background-color: white;" class="text-center">
