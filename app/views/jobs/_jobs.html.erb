@@ -3,7 +3,11 @@
     <div class="job-bar">
       <div class="logo">
         <%= link_to company_job_path(job.company, job) do %>
-          <%= image_tag job.company.logo, class: "company-logo" %>
+          <% if job.company.logo? %>
+            <%= image_tag job.company.logo, class: "company-logo" %>
+          <% else %>
+            <%= image_tag ( "fallback.png"), class: "company-logo" %>
+          <% end %>
       </div>
           <div class="text">
             <div class="job-title">
@@ -23,7 +27,11 @@
     <div class="job-bar">
       <div class="logo">
         <%= link_to job_path(job) do %>
-          <%= image_tag job.unregistered_company_logo, class: "company-logo" %>
+          <% if job.unregistered_company_logo? %>
+            <%= image_tag job.unregistered_company_logo, class: "company-logo" %>
+          <% else %>
+            <%= image_tag ( "fallback.png"), class: "company-logo" %>
+          <% end %>
       </div>
 
           <div class="text">

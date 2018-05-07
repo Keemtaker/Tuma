@@ -1,14 +1,26 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
-  <div class="job-card">
-    <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
-    <h3><%= @job.unregistered_company_name %></h3>
-    <h1><%= @job.title %></h1>
-    <div class="show-right">
-      <h4><%= @job.salary %></h4>
+<% if @job.unregistered_company_photo? %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @job.unregistered_company_photo %>');">
+    <div class="job-card">
+      <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
+      <h3><%= @job.unregistered_company_name %></h3>
+      <h1><%= @job.title %></h1>
+      <div class="show-right">
+        <h4><%= @job.salary %></h4>
+      </div>
     </div>
   </div>
-</div>
-
+<% else %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/default-background.jpg');">
+    <div class="job-card">
+      <%= image_tag @job.unregistered_company_logo, class: "show-logo" %>
+      <h3><%= @job.unregistered_company_name %></h3>
+      <h1><%= @job.title %></h1>
+      <div class="show-right">
+        <h4><%= @job.salary %></h4>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <div style="padding: 20px; background-color: white;" class="apply-box text-center">
   <% if @job.job_application_type == "Url" %>

@@ -109,11 +109,11 @@
 # # name of hardware companies [ElectronicArts, Beats, Hewlett-Packard]
 # # name of Media companies [CNN, Watsapp, Twitter  ]
 # Company.all.each do |company|
-#   company.photo = Rails.root.join("app/assets/images/cover/#{company.name.gsub(" ","")}.jpg").open
-#   company.logo = Rails.root.join("app/assets/images/logo/#{company.name.gsub(" ","")}.svg").open
-#   company.save
-# end
-# p "Success!!!"
+#   company.photo = Rails.root.join("app/assets/images/default-background.jpg").open
+#    company.logo = Rails.root.join("app/assets/images/logo/#{company.name.gsub(" ","")}.svg").open
+#    company.save
+#  end
+#  p "Success!!!"
 
 # developer_one = Job.find(29).description
 # # consultant_one = Job.find(65).description
