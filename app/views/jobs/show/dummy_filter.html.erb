@@ -1,0 +1,68 @@
+<div class="filter-style">
+  <h4>Roles</h4>
+  <% new_roles = [] %>
+  <%= search_form_for @search, :class => 'filters_click' do |f| %>
+    <% @jobs.each do |job| %>
+      <% if job.role? %>
+        <% new_roles << job.role %>
+      <% end %>
+    <% end %>
+
+    <% new_roles.uniq.each do |new_role| %>
+      <div class="styled-input-container">
+        <a>
+          <label>
+            <%= check_box_tag('q[role_eq_any][]', new_role) %>
+              <%= new_role %>
+          </label>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="filter-style">
+  <h4>Type</h4>
+  <% new_roles = [] %>
+  <%= search_form_for @search, :class => 'filters_click' do |f| %>
+    <% @jobs.each do |job| %>
+      <% if job.job_type?  %>
+        <% new_roles << job.job_type %>
+      <% end %>
+    <% end %>
+
+    <% new_roles.uniq.each do |new_role| %>
+      <div class="styled-input-container">
+        <a>
+          <label>
+            <%= check_box_tag('q[job_type_eq_any][]', new_role) %>
+            <%= new_role %>
+          </label>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="filter-style">
+  <h4>Salary</h4>
+  <% new_roles = [] %>
+  <%= search_form_for @search, :class => 'filters_click' do |f| %>
+    <% @jobs.each do |job| %>
+      <% if job.salary? %>
+        <% new_roles << job.salary %>
+      <% end %>
+    <% end %>
+
+    <% new_roles.uniq.each do |new_role| %>
+      <div class="styled-input-container">
+        <a>
+          <label>
+            <%= check_box_tag('q[salary_eq_any][]', new_role) %>
+            <%= new_role %>
+          </label>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+</div>
