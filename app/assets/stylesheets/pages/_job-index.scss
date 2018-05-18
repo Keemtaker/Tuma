@@ -80,6 +80,10 @@ a:hover {
   color: gray;
 }
 
+input[type="search"] {
+  width: -webkit-fill-available;
+}
+
 @media only screen
 and (max-device-width : 667px) {
   .jobs_search {
@@ -90,3 +94,5 @@ and (max-device-width : 667px) {
 checkbox-hover:hover {
   color:gray;
 }
+
+
