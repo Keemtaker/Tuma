@@ -76,8 +76,8 @@
           <div class="col-md-9">
             <div class="category-choices">
               <% Perk.all.each do |perk| %>
-                <input type="checkbox", class="hidden" value="<%= perk.id %>" name="company[perk_ids][]" id="company_perk_ids_<%= perk.id %>"/>
-                <label class="category-choice <%= "active" if @company.perk_ids.include? perk.id %> for="company_perk_ids_<%= perk.id %>">
+                <input type="checkbox", class="hidden", value="<%= perk.id %>" name="company[perk_ids][]" id="company_perk_ids_<%= perk.id %>"/>
+                <label class="category-choice <%= "active" if @company.perk_ids.include? perk.id %>" for="company_perk_ids_<%= perk.id %>">
                 <% case perk.name %>
                   <% when "Friday Bars" %>
                     <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
