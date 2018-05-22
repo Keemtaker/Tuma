@@ -40,6 +40,10 @@
     <% end %>
   </div>
 
+  <% @company.industries.each do |industry| %>
+    <%= industry.name %>
+  <% end %>
+
   <div class="col-md-10" style="margin-top: 40px; background-color: #5DB1D1; margin-bottom: 140px";>
     <% if @company.jobs %>
       <h4 class="style-section">Open positions at <%= @company.name %></h4>
