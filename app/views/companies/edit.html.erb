@@ -38,9 +38,9 @@
               <% Industry.all.each do |industry| %>
                 <div class="styled-input-container styled-input--rounded">
                   <div class="styled-input-single">
-
-                    <input type="checkbox" value="<%= industry.id %>" name="company[industry_ids][]" id="company_industry_ids_<%= industry.id %>"/>
-                    <label for="company_industry_ids_<%= industry.id %>"Industry>
+                    <input type="hidden" name="company[industry_ids][]" value=""/>
+                    <input type="checkbox" value="<%= industry.id %>" name="company[industry_ids][]" id="company_industry_ids_<%= industry.id %>" <%= "checked" if @company.industry_ids.include? industry.id %> />
+                    <label for="company_industry_ids_<%= industry.id %>"  >
                       <%= industry.name %>
                     </label>
                   </div>
@@ -76,6 +76,7 @@
           <div class="col-md-9">
             <div class="category-choices">
               <% Perk.all.each do |perk| %>
+               <input type="hidden" name="company[perk_ids][]" value=""/>
                 <input type="checkbox", class="hidden" value="<%= perk.id %>" name="company[perk_ids][]" id="company_perk_ids_<%= perk.id %>" <%= "checked" if @company.perk_ids.include? perk.id %> />
                 <label class="category-choice <%= "active" if @company.perk_ids.include? perk.id %>" for="company_perk_ids_<%= perk.id %>">
                 <% case perk.name %>
