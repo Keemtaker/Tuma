@@ -76,8 +76,7 @@ class JobsController < ApplicationController
   def quick_job
     @job = Job.new(job_params)
       if params[:previewButt] == "Preview"
-        @uploaded_file = params[:job][:unregistered_company_logo].tempfile
-        flash[:alert] = "This is a PREVIEW of your job posting. Go back to the previous tab to Post the job or make edits."
+        # flash[:alert] = "This is a PREVIEW of your job posting. Go back to the previous tab to Post the job or make edits."
         render :create
       elsif
         params[:createButt] == "Post Job"
