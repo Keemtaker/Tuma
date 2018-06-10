@@ -28,6 +28,8 @@ gem 'uglifier'
 gem 'devise'
 gem 'ransack'
 gem 'trix'
+gem 'mailgun-ruby', '~>1.1.6'
+
 
 
 gem "letter_opener", group: :development
