@@ -1,4 +1,9 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('/assets/plain.png');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    <% if @job.unregistered_company_photo? %>
+      url('<%= @job.unregistered_company_photo.current_path.split('public').last %>');
+    <% else %>
+      url('/assets/default-background.jpg');>
+    <% end %>
   <div class="job-card">
     <% if @job.unregistered_company_logo? %>
       <%= image_tag @job.unregistered_company_logo.current_path.split('public').last, class: "show-logo" %>
@@ -10,7 +15,6 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row pitch-box">
     <div style="margin-bottom:10px;" class="col-md-6">

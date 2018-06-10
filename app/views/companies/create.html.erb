@@ -1,6 +1,14 @@
-<div class="card" style="height: 500px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @company.photo %>');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+  <% if @company.photo? %>
+    url('<%= @company.photo.current_path.split('public').last %>')
+  <% else %>
+    url('/assets/default-background.jpg')
+  <% end %>
+  ;">
   <div class="job-card">
-    <%= image_tag @company.logo, class: "show-logo" %>
+    <% if @company.logo %>
+      <%= image_tag @company.logo.current_path.split('public').last, class: "show-logo" %>
+    <% end %>
     <h1><%= @company.name %></h1>
     <h3 style="color: #5DB1D1";><%= @company.location %></h3>
     <h3><%= @company.address %></h3>

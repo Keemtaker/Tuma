@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user = current_user
-      preview_company
+    preview_company
   end
 
   def show
@@ -39,7 +39,7 @@ private
 
   def preview_company
     if params[:previewButt] == "Preview"
-      flash[:alert] = "This is a PREVIEW of your company profile. Go back to the previous tab to Submit or make edits."
+      # flash[:alert] = "This is a PREVIEW of your company profile. Go back to the previous tab to Submit or make edits."
       render :create
     elsif params[:createButt] == "Submit"
       @company.save
