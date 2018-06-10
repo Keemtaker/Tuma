@@ -16,7 +16,7 @@ Rails.application.configure do
   :authentication => :plain,
 }
 
-  # config.action_mailer.default_url_options = { host: "touma.herokuapp.com" }
+config.action_mailer.default_url_options = { host: "https://www.tumajobs.com.gh"}
 
 
 
