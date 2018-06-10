@@ -75,7 +75,7 @@
         <div class="form-group">
           <label class="col-md-1 control-label"></label>
           <div class="col-md-9 text-center" style="margin-top: 110px;">
-            <%= f.button :submit , name: "previewButt", value: "Preview" %>
+            <%= f.button :submit , name: "previewButt", value: "Preview", formtarget:"_blank", data: { disable_with: false } %>
             <%= f.button :submit , name: "createButt", value: "Submit", class: "btn btn-success post-btn" %>
           </div>
           <div class="col-md-9" style="margin-top: 80px;">
