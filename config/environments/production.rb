@@ -6,14 +6,10 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-  :port           => 587,
-  :address        => "smtp.mailgun.org",
-  :domain         => ENV['domain'],
-  :user_name      => ENV['username'],
-  :password       => ENV['password'],
-  :authentication => :plain,
+config.action_mailer.delivery_method = :mailgun
+config.action_mailer.mailgun_settings = {
+  api_key: ENV['API_KEY'],
+  domain: ENV['DOMAIN'],
 }
 
 config.action_mailer.default_url_options = { host: "https://www.tumajobs.com.gh"}
