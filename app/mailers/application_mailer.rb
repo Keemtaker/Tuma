@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'keemtaker@yahoo.com'
+  default from: 'postmaster@tumajobs.com.gh'
   layout 'mailer'
 end
